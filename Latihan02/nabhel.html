@@ -1,8 +1,27 @@
 <html>
+
 <script>
-alert(1)
+    MyDatabase = {
+        Customer : [
+            {id:1, name:'irfan', sex:0, address:'email'},
+            {id:2, name:'habibi', sex:0, address:'email'},
+            {id:3, name:'nindya', sex:1, address:'email'}
+        ],
+        Sex : [
+            {name:'Male'},
+            {name:'Female'}
+        ],
+        SearchCustomer : function(name_search, field) {
+            alert(name_search)
+        },
+        SearchSex : function(name) {
+            alert(name);
+        }
+// {id.., name:...m sjeniskelamin...m address...}
+        /// customer :  id:1, name:'irfan', jenis_kelamin:'male',address:'asdfsadfsadf'}
+
+    }
 
 </script>
-
 
 </html>
