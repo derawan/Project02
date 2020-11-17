@@ -1,0 +1,254 @@
+<html>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+<script>
+
+    /*************** SINGLE INSTANCE : SINGLETON ****************/
+    MyDatabase = {
+        User : [
+            {"id":1,"name":"irfan","email":"irfan@mail.net","sex":0,"address":"jalan 1", "role":0, "reportto":null},
+
+            {"id":2,"name":"habibi","email":"habibi@mail.net","sex":0,"address":"jalan 2", "role":1, "reportto":null},
+
+            {"id":3,"name":"nabhel","email":"nabhel@mail.net","sex":1,"address":"jalan 3", "role":2, "reportto":2},
+            {"id":4,"name":"nabila","email":"nabila@mail.net","sex":1,"address":"jalan 4", "role":2, "reportto":2},
+            {"id":5,"name":"ausmick","email":"ausmick@mail.net","sex":0,"address":"jalan 5", "role":2, "reportto":2},
+
+            {"id":6,"name":"ika","email":"ika@mail.net","sex":1,"address":"jalan 6", "role":3, "reportto":3},
+            {"id":7,"name":"nindya","email":"nindya@mail.net","sex":1,"address":"jalan 7", "role":3, "reportto":3},
+            {"id":8,"name":"rizki","email":"rizki@mail.net","sex":0,"address":"jalan 8", "role":3, "reportto":3},
+            {"id":9,"name":"fakhri","email":"fakhri@mail.net","sex":0,"address":"jalan 9", "role":3, "reportto":3},
+            {"id":10,"name":"gleen","email":"gleen@mail.net","sex":0,"address":"jalan 10", "role":3, "reportto":3},
+
+            {"id":11,"name":"indah","email":"indah@mail.net","sex":1,"address":"jalan 11", "role":3, "reportto":4},
+            {"id":12,"name":"ria","email":"ria@mail.net","sex":1,"address":"jalan 12", "role":3, "reportto":4},
+            {"id":13,"name":"faisal","email":"faisal@mail.net","sex":0,"address":"jalan 13", "role":3, "reportto":4},
+            {"id":14,"name":"johan","email":"johan@mail.net","sex":0,"address":"jalan 14", "role":3, "reportto":4},
+
+            {"id":15,"name":"erwin","email":"erwin@mail.net","sex":0,"address":"jalan 15", "role":3, "reportto":5},
+            {"id":16,"name":"mardiy","email":"mardiy@mail.net","sex":0,"address":"jalan 16", "role":3, "reportto":5},
+            {"id":17,"name":"haykal","email":"haykal@mail.net","sex":0,"address":"jalan 17", "role":3, "reportto":5},
+
+            {"id":18,"name":"susan","email":"susan@mail.net","sex":1,"address":"jalan 18", "role":4, "reportto":3},
+            {"id":19,"name":"arnold","email":"arnold@mail.net","sex":0,"address":"jalan 19", "role":4, "reportto":4},
+            {"id":20,"name":"karin","email":"karin@mail.net","sex":1,"address":"jalan 20", "role":4, "reportto":5},
+        ],
+        Sex : [
+            {name:'Male'},
+            {name:'Female'}
+        ],
+        Role : [
+            {name:'Admin'},
+            {name:'Manager'},
+            {name:'Supervisor'},
+            {name:'SPG'},
+            {name:'Merchandiser'}
+        ],
+        /*******************************************
+         * Search Customer will return customer record
+         *******************************************/
+        SearchUser : function(name_search, field) {
+            // set result as empty
+            var result = [];
+            for(var i=0; i<this.User.length; i++)
+            {
+                if (this.User[i][field] === name_search)
+                {
+                    // build new object 
+                    var search_result = {
+                        id: this.User[i].id,
+                        name: this.User[i].name,
+                        email:this.User[i].email,
+                        address:this.User[i].address,
+                        jeniskelamin:this.SearchSex(this.User[i].sex),
+                        role:this.SearchRole(this.User[i].role),
+                        bos:this.SearchUser(this.User[i].reportto,'id')
+                    }
+                    result.push(search_result);
+                }
+            }
+            return result;
+        },
+        /*******************************************
+         * Search Customer will return customer index
+         *******************************************/
+         SearchUser2 : function(name_search, field) {
+            // set result as empty
+            var result = [];
+            for(var i=0; i<this.User.length; i++)
+            {
+                if (this.User[i][field] === name_search)
+                {
+                    // build new object 
+                    result.push(i);
+                }
+            }
+            return result;
+        },
+        SearchSex : function(id) {
+            
+            if (this.Sex[id]==undefined)
+            {
+                return null;
+            }
+            return this.Sex[id].name;
+        },
+        SearchRole : function(id) {
+            if (this.Role[id]==undefined)
+            {
+                return null;
+            }
+            return this.Role[id].name;
+        },
+        Add : function(newItem) {
+            /* we create automatic id */
+            var maxnumber = -1;
+            for(i=0;i<this.User.length;i++)
+            {
+                if(this.User[i].id > maxnumber){
+                    maxnumber = this.User[i].id;
+                }
+            }
+            maxnumber++;
+
+            newItem.id = maxnumber;
+            this.User.push(newItem);
+        },
+        Update: function(id, newItem) {
+            var indeks = this.SearchUser2(id,'id');
+            if (indeks.length > 0) {
+                this.User[indeks] = newItem
+            }
+        },
+        Delete: function(id) {
+            var indeks = this.SearchUser2(id,'id');
+            result = [];
+            for(var i=0;i<this.User.length;i++)
+            {
+                if (indeks!=i) {
+                    result.push(this.User[i])
+                }
+            }
+            // make it permanent
+            this.User = result;
+            return result;
+        },
+        Clear: function() {
+            this.User = undefined;
+            delete(this.User)
+        },
+        Commit: function() {
+            localStorage.setItem("UserTable",JSON.stringify(this.User));
+            localStorage.setItem("RoleTable",JSON.stringify(this.Role));
+            localStorage.setItem("SexTable",JSON.stringify(this.Sex));
+        },
+        Load:function() {
+            this.User = JSON.parse(localStorage.getItem("UserTable"));
+            this.Role = JSON.parse(localStorage.getItem("RoleTable"));
+            this.Sex =  JSON.parse(localStorage.getItem("SexTable"));
+        }
+
+    }
+
+
+
+    class CarType {
+        /*********** Constructor **************************/
+        constructor (model) {
+            this.model = model
+        }
+
+
+        /********** Property  Model **********************/
+        get Model() {
+            return this.model
+        }
+
+        set Model(value) {
+            this.model = value
+        }
+        /*********** End of Property Model ************/
+
+
+    }
+
+
+    function AnimalType(model) {
+        this.model = model;
+        Object.defineProperty(this,'Model',{
+            get : function() {
+                return this.model
+            },
+            set : function(value) {
+                this.model = value;
+            }
+        })
+    
+    }
+
+
+    class LivingThing {
+        constructor(name, number_of_leg, number_of_hand, color) {
+            this.leg = number_of_leg
+            this.hand = number_of_hand
+            this.name = name
+            this.color = color
+        }
+
+        get Name() {
+            return this.name
+        }
+
+        set Name(value) {
+            this.name = name
+        }
+
+
+        get hasLeg() {
+            return this.leg > 0
+        }
+
+
+        birth() {
+            var bd = $(document.body);
+            var ele = $("<div style='background:"+this.color+";width:30px;height:30px;position:absolute'>"+this.name+"</div>");
+            bd.append(ele);
+        }
+
+    }
+
+    class AnimalThing  extends LivingThing {
+        constructor(name, color, number_of_leg, eat) {
+            super(name, number_of_leg,0, color);
+            this.eat = eat;
+        }
+
+        IsCarnivore() {
+            return this.eat == 'meat';
+        }
+
+        IsHerbivore() {
+            return this.eat == 'plant';
+        }
+
+        IsOmnivor() {
+            return this.eat == 'all'
+        }
+
+        get Tipe() {
+            return this.IsCarnivore()?
+                "Carnivore":
+                this.IsHerbivore()? "Herbivore" : "Omnivore"
+        }
+    }
+
+    class HumanThing extends LivingThing {
+        constructor(name,color) {
+            super(name, 2,2,color);
+            this.eat = eat;
+        }
+    }
+
+
+</script>
+
+</html>
