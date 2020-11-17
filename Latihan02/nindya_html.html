@@ -1,0 +1,77 @@
+<!--Make an example HTML website included table, ol, ul, p, span, input, select-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wisata Bandung</title>
+    <style>
+        table {
+            border: 2px solid rgb(10, 30, 119);
+        }
+        th, td {
+            border: 1px solid rgb(10, 119, 25);
+        }
+    </style>
+    </head>
+
+    <body>
+        <h1>Itinerary</h1>
+        <p>Berikut merupakan deskripsi hari dan kegiatan yang akan dilakukan.</p>
+        <table>
+            <tr>
+                <th>Hari</th>
+                <th>Kegiatan</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>Jumat</td>
+                <td>Perjalanan pergi dan menuju Lembang</td>
+                <td>Berangkat pukul 7 pagi</td>
+            </tr>
+            <tr>
+                <td>Sabtu</td>
+                <td>Berwisata</td>
+                <td>Mulai pukul 9 pagi</td>
+            </tr>
+            <tr>
+                <td>Minggu</td>
+                <td>Membeli oleh-oleh dan perjalanan pulang</td>
+                <td>Pulang pukul 4 sore</td>
+            </tr>
+        </table>
+
+        <p>Berikut merupakan deskripsi lokasi wisata yang akan dikunjungi.</p>
+        <ol>
+            <li>Orchid Forest</li>
+            <li>Rancaupas</li>
+            <li>Tangkuban Perahu</li>
+            <li>City Tour</li>
+        </ol>
+        
+        <p>Perlengkapan yang harus dibawa yaitu:</p>
+        <ul>
+            <li>Obat-obatan pribadi</li>
+            <li>Peralatan mandi pribadi</li>
+            <li>Baju secukupnya</li>
+        </ul>
+
+        <p>Harap hadir <span style ="color:red;font-weight:bold">SATU JAM</span> sebelum keberangkatan pada hari Jumat.</p><br>
+
+        <h2>Data Partisipan</h2>
+
+        <form action="/action_page.php">
+            <label for="partname">Nama lengkap :</label>
+            <input type="text" id="partname" name="partname"><br><br>
+            <label for="partage">Umur :</label>
+            <input type="number" id="partage" name="partage"><br><br>
+            <label for="partfrom">Asal wilayah :</label>
+            <select name="partfrom" id="partfrom">
+                <option value="bandung">Bandung</option>
+                <option value="jakarta">Jakarta</option>
+                <option value="bodetabek">Bodetabek</option>
+                <option value="lainnya">Lainnya</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

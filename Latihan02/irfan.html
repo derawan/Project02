@@ -33,16 +33,6 @@
          * Search Customer will return customer record
          *******************************************/
         SearchCustomer : function(name_search, field) {
-<<<<<<< HEAD
-            indeks_cari= -1;
-            result = [];
-            for(i=0;i<MyDatabase.Customer.length;i++)
-            {
-                if (MyDatabase.Customer[i][name] == search_name)
-                {
-                    result.push(MyDatabase.Customer[i]);
-                    indeks_dicari= i;
-=======
             // set result as empty
             var result = [];
             for(var i=0; i<this.Customer.length; i++)
@@ -58,7 +48,6 @@
                         jeniskelamin:this.SearchSex(this.Customer[i].sex)
                     }
                     result.push(search_result);
->>>>>>> 7d5e095979c6e59fadff1de58f06a21dd0c4f674
                 }
             }
             return result;
