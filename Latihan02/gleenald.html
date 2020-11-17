@@ -1,0 +1,49 @@
+<html>
+
+<script>
+    customer = [
+       {id:001, name:'siti', email: 'siti001@gmail.com', sex:1},
+       {id:002, name:'ani', email: 'ani94@gmail.com', sex:1},
+       {id:003, name:'kibo', email: 'kribo99@gmail.com', sex:0},
+       {id:004, name:'hasbi', email: 'nurhadi@gmail.com', sex:0}
+   ]
+   sex = [
+       {id:1, name:'Male'},
+       {id:2, name:'Female'}
+   ]
+
+   //search customer function;
+   function cari(name_we_were_searching, field)
+    {
+    indeks_cari = -1;
+    result = [];
+    for (i=0;i<customer.length;i++)
+    {
+        if (customer[i][field] == name_we_were_searching)
+        {
+            result.push(customer[i]);
+            indeks_cari = i;
+        }
+    }
+    return result; //searchSex('1','id');
+    }
+
+    //search sex
+    function searchSex(idNum, field)
+    {
+        indeks_cari = -1;
+        result = [];
+        for (i=0;i<sex.length;i++)
+        {
+            if(sex[i][field] == idNum)
+            {
+                result.push(sex[i]);
+                indeks_cari = i;
+            }
+        return result;
+        }
+    }
+
+</script>
+
+</html>
