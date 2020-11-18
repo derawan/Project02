@@ -47,7 +47,7 @@ function Test(valueTobeTested) {
         else if (valueTobeTested >= 0  & valueTobeTested <= 9) {
             msg = "You have entered number between 0 - 9 "
         }
-        else if (valueTobeTested > 10  & valueTobeTested <= 19) {
+        else if (valueTobeTested > 9  & valueTobeTested <= 19) {
             msg = "You have entered number between 10 - 19 "
         }
         else if (valueTobeTested > 19  & valueTobeTested <= 100) {
@@ -61,14 +61,20 @@ function Test(valueTobeTested) {
 /* Recursive Function - a function who call it self */
 function Test2(valueTo) {
     console.log(valueTo)
-    if (valueTo != 1) {
+    //if (valueTo != 1) 
+    {
         return valueTo * Test2(valueTo-1)
     }
-    else {
-        return 1;
-    }
+    //else {
+    //    return 1;
+    //}
 
 }
+
+
+
+
+
 
 
 User = [
@@ -198,7 +204,7 @@ User = [
             Click Me
         </button>
         <hr/>
-        <div id="myscreen" style="width:100%;height:400px;background:black;color:white;padding:10px;font-size:40px">
+        <div id="myscreen" style="width:100%;height:400px;background:red;color:white;padding:10px;font-size:40px">
 
         </div>
         <hr/>
@@ -209,5 +215,6 @@ User = [
         <div id="myscreen2" style="width:100%;height:400px;background:black;color:white;padding:10px;font-size:40px">
 
         </div>
+        
     </body>
 </html>
