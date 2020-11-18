@@ -3,79 +3,25 @@
 <script>
     MyDatabase = {
         Customer : [
-        {"id":"1","name":"irfan","email":"irfan@mail.net","sex":3,"address":"jalan 1"},
-        {"id":"2","name":"habibi","email":"habibi@mail.net","sex":1,"address":"jalan 2"},
-        {"id":"3","name":"nabhel","email":"nabhel@mail.net","sex":2,"address":"jalan 3"},
-        {"id":"4","name":"nabila","email":"nabila@mail.net","sex":2,"address":"jalan 4"},
-        {"id":"5","name":"ausmick","email":"ausmick@mail.net","sex":1,"address":"jalan 5"},
-        {"id":"6","name":"ika","email":"ika@mail.net","sex":2,"address":"jalan 6"},
-        {"id":"7","name":"nindya","email":"nindya@mail.net","sex":2,"address":"jalan 7"},
-        {"id":"8","name":"rizki","email":"rizki@mail.net","sex":1,"address":"jalan 8"},
-        {"id":"9","name":"fakhri","email":"fakhri@mail.net","sex":1,"address":"jalan 9"},
-        {"id":"10","name":"gleen","email":"gleen@mail.net","sex":1,"address":"jalan 10"},
-        {"id":"11","name":"indah","email":"indah@mail.net","sex":2,"address":"jalan 11"},
-        {"id":"12","name":"ria","email":"ria@mail.net","sex":2,"address":"jalan 12"},
-        {"id":"13","name":"faisal","email":"faisal@mail.net","sex":1,"address":"jalan 13"},
-        {"id":"14","name":"johan","email":"johan@mail.net","sex":1,"address":"jalan 14"},
-        {"id":"15","name":"erwin","email":"erwin@mail.net","sex":1,"address":"jalan 15"},
-        {"id":"16","name":"mardiy","email":"mardiy@mail.net","sex":1,"address":"jalan 16"},
-        {"id":"17","name":"haykal","email":"haykal@mail.net","sex":1,"address":"jalan 17"},
-        {"id":"18","name":"susan","email":"susan@mail.net","sex":2,"address":"jalan 18"},
-        {"id":"19","name":"arnold","email":"arnold@mail.net","sex":1,"address":"jalan 19"},
-        {"id":"20","name":"karin","email":"karin@mail.net","sex":2,"address":"jalan 20"},
-
+            {id:1, name:'irfan', sex:0, address:'email'},
+            {id:2, name:'habibi', sex:0, address:'email'},
+            {id:3, name:'nindya', sex:1, address:'email'}
         ],
         Sex : [
             {name:'Male'},
             {name:'Female'}
         ],
-        /*******************************************
-         * Search Customer will return customer record
-         *******************************************/
         SearchCustomer : function(name_search, field) {
-<<<<<<< HEAD
-            indeks_cari= -1;
-            result = [];
-            for(i=0;i<MyDatabase.Customer.length;i++)
-            {
-                if (MyDatabase.Customer[i][name] == search_name)
-                {
-                    result.push(MyDatabase.Customer[i]);
-                    indeks_dicari= i;
-=======
-            // set result as empty
-            var result = [];
-            for(var i=0; i<this.Customer.length; i++)
-            {
-                if (this.Customer[i][field] === name_search)
-                {
-                    // build new object 
-                    var search_result = {
-                        id: this.Customer[i].id,
-                        name: this.Customer[i].name,
-                        email:this.Customer[i].email,
-                        address:this.Customer[i].address,
-                        jeniskelamin:this.SearchSex(this.Customer[i].sex)
-                    }
-                    result.push(search_result);
->>>>>>> 7d5e095979c6e59fadff1de58f06a21dd0c4f674
-                }
-            }
-            return result;
+            alert(name_search)
         },
         SearchSex : function(name) {
-            if (this.Sex[name]!=undefined)
-            {
-                return null;
-            }
-            return this.Sex[name].name;
-        },
-
+            alert(name);
+        }
 // {id.., name:...m sjeniskelamin...m address...}
+// Cari('sdfsdfds','sdfsdf')
         /// customer :  id:1, name:'irfan', jenis_kelamin:'male',address:'asdfsadfsadf'}
 
     }
-
 
 </script>
 

@@ -55,7 +55,7 @@
                 {
                     // build new object 
                     var search_result = {
-                        id: this.User[i].id,
+                        id: MyDatabase.User[i].id,
                         name: this.User[i].name,
                         email:this.User[i].email,
                         address:this.User[i].address,
@@ -242,12 +242,15 @@
     }
 
     class HumanThing extends LivingThing {
-        constructor(name,color) {
+        constructor(name,color, eat) {
             super(name, 2,2,color);
             this.eat = eat;
         }
     }
 
+    class MyClass {
+        
+    }
 
 </script>
 
