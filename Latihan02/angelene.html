@@ -1,0 +1,47 @@
+<html>
+
+<script>
+    MyDatabase = {
+        Customer : [
+            {"id":1, "name":"irfan", "sex":0, "address":"jalan kota"},
+            {"id":2, "name":"habibi", "sex":0, "address":"jalan aja"},
+            {"id":3, "name":"nindya", "sex":1, "address":"jalan nanas"}
+        ],
+        Sex : [
+            {name:'Male'},
+            {name:'Female'}
+        ],
+        SearchCustomer : function(name_search, field) {
+            
+            var result = [];
+            for(var i=0;i<this.Customer.length;i++)
+            {
+                if(this.Customer[i][field]===name_search)
+                {
+                    var search_result = {
+                        id: this.Customer[i].id,
+                        name: this.Customer[i].name,
+                        jeniskelamin: this.SearchSex(this.Customer[i].sex),
+                        address: this.Customer[i].address
+                    }
+                    result.push(search_result)
+                }
+            }
+            return result;
+        },
+        SearchSex : function(id) {
+            if (this.Sex[id]==undefined)
+            {
+                return null;
+            }
+            return this.Sex[id].name;
+        }
+
+// {id.., name:...m sjeniskelamin...m address...}
+        /// customer :  id:1, name:'irfan', jenis_kelamin:'male',address:'asdfsadfsadf'}
+
+    }
+
+</script>
+
+</html>
