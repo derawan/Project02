@@ -1,28 +1,220 @@
 <html>
-
+    <head>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
 <script>
-    MyDatabase = {
-        Customer : [
-            {id:1, name:'irfan', sex:0, address:'email'},
-            {id:2, name:'habibi', sex:0, address:'email'},
-            {id:3, name:'nindya', sex:1, address:'email'}
-        ],
-        Sex : [
-            {name:'Male'},
-            {name:'Female'}
-        ],
-        SearchCustomer : function(name_search, field) {
-            alert(name_search)
-        },
-        SearchSex : function(name) {
-            alert(name);
+
+/******************* HOW WE DEFINE A VARIABLE *******************/
+// #1
+myName = "irfansjah";
+// #2
+var myAddress = "perumahan bilabong bojong gede";
+// #3
+let myPhone = "081293728732";
+
+/******************* HOW WE DEFINE A CONSTANT *******************/
+const seceng = 1000; 
+
+/****************** BRANCHING **********************************/ 
+/** IF **/
+nilai = 100
+if (nilai < seceng)
+{
+    /*** WATCH THIS ****/
+    console.log(`${nilai} is less than ${seceng}`)
+    console.log(nilai + " is less than " + seceng)
+}
+
+if (nilai < seceng)
+{
+    /*** WATCH THIS ****/
+    console.log(`${nilai} is less than ${seceng}`)
+    console.log(nilai + " is less than " + seceng)
+}
+
+/* if in function */
+function Test(valueTobeTested) {
+    var msg = "";
+    if(isNaN(valueTobeTested))
+    {
+        msg ="Sorry you entered non number!!!!!"
+    }
+    else 
+    {
+        if (valueTobeTested < 0) 
+        {
+            msg = "Please enter number greater than 0"
         }
-// {id.., name:...m sjeniskelamin...m address...}
-// Cari('sdfsdfds','sdfsdf')
-        /// customer :  id:1, name:'irfan', jenis_kelamin:'male',address:'asdfsadfsadf'}
+        else if (valueTobeTested >= 0  & valueTobeTested <= 9) {
+            msg = "You have entered number between 0 - 9 "
+        }
+        else if (valueTobeTested > 9  & valueTobeTested <= 19) {
+            msg = "You have entered number between 10 - 19 "
+        }
+        else if (valueTobeTested > 19  & valueTobeTested <= 100) {
+            msg = "You have entered number between 20 - 100"
+        }
 
     }
+    $('#myscreen').text(msg)
+}
+
+/* Recursive Function - a function who call it self */
+function Test2(valueTo) {
+    console.log(valueTo)
+    //if (valueTo != 1) 
+    {
+        return valueTo * Test2(valueTo-1)
+    }
+    //else {
+    //    return 1;
+    //}
+
+}
+
+
+
+
+
+
+
+User = [
+            {"id":1,"name":"irfan","email":"irfan@mail.net","sex":0,"address":"jalan 1", "role":0, "reportto":null},
+
+            {"id":2,"name":"habibi","email":"habibi@mail.net","sex":0,"address":"jalan 2", "role":1, "reportto":null},
+
+            {"id":3,"name":"nabhel","email":"nabhel@mail.net","sex":1,"address":"jalan 3", "role":2, "reportto":2},
+            {"id":4,"name":"nabila","email":"nabila@mail.net","sex":1,"address":"jalan 4", "role":2, "reportto":2},
+            {"id":5,"name":"ausmick","email":"ausmick@mail.net","sex":0,"address":"jalan 5", "role":2, "reportto":2},
+
+            {"id":6,"name":"ika","email":"ika@mail.net","sex":1,"address":"jalan 6", "role":3, "reportto":3},
+            {"id":7,"name":"nindya","email":"nindya@mail.net","sex":1,"address":"jalan 7", "role":3, "reportto":3},
+            {"id":8,"name":"rizki","email":"rizki@mail.net","sex":0,"address":"jalan 8", "role":3, "reportto":3},
+            {"id":9,"name":"fakhri","email":"fakhri@mail.net","sex":0,"address":"jalan 9", "role":3, "reportto":3},
+            {"id":10,"name":"gleen","email":"gleen@mail.net","sex":0,"address":"jalan 10", "role":3, "reportto":3},
+
+            {"id":11,"name":"indah","email":"indah@mail.net","sex":1,"address":"jalan 11", "role":3, "reportto":4},
+            {"id":12,"name":"ria","email":"ria@mail.net","sex":1,"address":"jalan 12", "role":3, "reportto":4},
+            {"id":13,"name":"faisal","email":"faisal@mail.net","sex":0,"address":"jalan 13", "role":3, "reportto":4},
+            {"id":14,"name":"johan","email":"johan@mail.net","sex":0,"address":"jalan 14", "role":3, "reportto":4},
+
+            {"id":15,"name":"erwin","email":"erwin@mail.net","sex":0,"address":"jalan 15", "role":3, "reportto":5},
+            {"id":16,"name":"mardiy","email":"mardiy@mail.net","sex":0,"address":"jalan 16", "role":3, "reportto":5},
+            {"id":17,"name":"haykal","email":"haykal@mail.net","sex":0,"address":"jalan 17", "role":3, "reportto":5},
+
+            {"id":18,"name":"susan","email":"susan@mail.net","sex":1,"address":"jalan 18", "role":4, "reportto":3},
+            {"id":19,"name":"arnold","email":"arnold@mail.net","sex":0,"address":"jalan 19", "role":4, "reportto":4},
+            {"id":20,"name":"karin","email":"karin@mail.net","sex":1,"address":"jalan 20", "role":4, "reportto":5},
+        ];
+
+    Sex = [
+            {name:'Male'},
+            {name:'Female'}
+        ];
+
+    Role = [
+            {name:'Admin'},
+            {name:'Manager'},
+            {name:'Supervisor'},
+            {name:'SPG'},
+            {name:'Merchandiser'}
+        ];
+
+    function SearchUser(name_search, field) {
+            // set result as empty
+            var result = [];
+            for(var i=0; i<User.length; i++)
+            {
+                if (User[i][field] === name_search)
+                {
+                    // build new object 
+                    var search_result = {
+                        id:     User[i].id,
+                        name:   User[i].name,
+                        email:  User[i].email,
+                        address:User[i].address,
+                        jeniskelamin:SearchSex(User[i].sex),
+                        role:SearchRole(User[i].role),
+                        bos:SearchUser(User[i].reportto,'id')
+                    }
+                    result.push(search_result);
+                }
+            }
+            return result;
+        }
+
+    function SearchUser2(name_search, field) {
+            // set result as empty
+            var result = [];
+            for(var i=0; i<User.length; i++)
+            {
+                if (User[i][field] === name_search)
+                {
+                    // build new object 
+                    result.push(i);
+                }
+            }
+            return result;
+        }
+
+    function SearchSex(id) {
+            
+            if (Sex[id]==undefined)
+            {
+                return null;
+            }
+            return Sex[id].name;
+        }
+
+    function SearchRole(id) {
+            if (Role[id]==undefined)
+            {
+                return null;
+            }
+            return Role[id].name;
+        }
+
+
+    /**** Lets use jQuery **********/
+
+    $(
+        function(){
+            // assign an event click on #clickme button
+            $('#clickme').on('click',function(){
+                // retrieve the value from #masukan input
+                var myinput = $('#masukan').val();
+                // call Test method :: try convert the value into number using parseInt
+                Test(parseInt(myinput));
+            })
+
+            $('#clickme2').on('click',function(){
+                // retrieve the value from #masukan2 input
+                var myinput = $('#masukan2').val();
+                // call Test2 method :: try convert the value into number using parseInt
+                var hasil = Test2(parseInt(myinput));
+                $('#myscreen2').text(hasil)
+            })
+        }
+    );
 
 </script>
+    </head>
+    <body>
+        <input type="text" id="masukan" />
+        <button id="clickme">
+            Click Me
+        </button>
+        <hr/>
+        <div id="myscreen" style="width:100%;height:400px;background:red;color:white;padding:10px;font-size:40px">
 
+        </div>
+        <hr/>
+        <input type="text" id="masukan2" />
+        <button id="clickme2">
+            Click Me 2
+        </button>
+        <div id="myscreen2" style="width:100%;height:400px;background:black;color:white;padding:10px;font-size:40px">
+
+        </div>
+        
+    </body>
 </html>

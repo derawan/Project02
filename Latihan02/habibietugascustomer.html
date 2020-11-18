@@ -11,7 +11,7 @@
             {id:1,name:'Female'},
         ],
     }
-    function SearchName(search_name, name)
+    function SearchName(search_name, field)
     {
         indeks_search= -1;
         result = [];
@@ -19,13 +19,13 @@
         {
             if (MyDatabase.Customer[i][name] == search_name)
             {
-                result.push(MyDatabase.Customer[i][name]);
+                result.push(MyDatabase.Customer[i])[name];
                 indeks_search= i;
             }
         }
         return alert(result);
    }
-   function SearchSex(search_sex, name)
+   function SearchSex(search_sex, field)
     {
         indeks_search= -1;
         result = [];
@@ -33,7 +33,7 @@
         {
             if (MyDatabase.jenis_kelamin[i][name] == search_sex)
             {
-                result.push(MyDatabase.jenis_kelamin[i][name]);
+                result.push(MyDatabase.jenis_kelamin[i]);
                 indeks_search= i;
             }
         }

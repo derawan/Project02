@@ -1,0 +1,32 @@
+<html>
+
+<script>
+    MyDatabase = {
+        Customer : [
+            {id:1, name:'irfan', jenis_kelamin:0, address:'email'},
+            {id:2, name:'habibi', jenis_kelamin:0, address:'email'},
+            {id:3, name:'nindya', jenis_kelamin:1, address:'email'}
+        ],
+        jenis_kelamin : [
+            {name:'Male'},
+            {name:'Female'}
+        ],
+    }
+    function SearchName(search_name, name)
+{
+    indeks_cari= -1;
+    result = [];
+    for(i=0;i<MyDatabase.Customer.length;i++)
+    {
+        if (MyDatabase.Customer[i][name] == search_name)
+        {
+            result.push(MyDatabase.Customer[i]);
+            indeks_dicari= i;
+        }
+    }
+    return result;
+}
+ 
+</script>
+
+</html>
