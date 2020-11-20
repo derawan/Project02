@@ -1,0 +1,267 @@
+<html>
+    <head>
+        <title>XML/HTML Table Exercise by Ika</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+        P {
+            font-size: 14px;
+            color: #6E4F49;
+        }
+
+        table {
+            background: white;
+            width: 100%;
+            
+        }
+
+        th {
+            border: 1px solid white;
+        } 
+        
+
+        td {
+            border: 1px solid white;
+        }
+
+        .content {
+            float: left;
+            width: 75%;
+            overflow: auto;
+        }
+
+        .aside {
+            float: right;
+            width: 25%;
+        }
+
+        .jumbotron {
+            padding: 60px;
+            background-color: lavender;
+            text-align: left;
+            top: 8px;
+            left: 16px;
+            color: #67a598;
+        }
+
+        .nav {
+            background: lavenderblush;
+        }
+
+        .nav > li {
+            display: inline;
+            list-style: none;
+            color: lightcoral
+
+        }
+
+        .nav > li > a {
+            color: lightslategray
+        }
+
+        .nav > li > a:hover {
+            color: lightyellow
+        }
+
+        .nav > li:hover {
+            background: lightcoral;
+            color: lightgoldenrodyellow;
+        }
+
+        .nav > li > ul {
+            display: none;
+            list-style: none;
+            color: mediumpurple;
+            position: absolute;
+        }
+
+        .nav > li:hover > ul {
+            background-color: lightyellow;
+            display: block;
+        }
+
+        .nav > li:hover > ul:hover{
+            background-color: mediumpurple;
+            color: mintcream;
+            margin-right: auto;
+        }
+
+        .nav > li > ul > a:hover{
+            background-color: mediumslateblue;
+            color:mistyrose
+        }
+
+        h1 {
+            font-size: 30px;
+            color: rgb(151, 151, 151);
+            text-align: left;
+        }
+
+        .containerfoto{
+            position: relative;
+            text-align: center;
+            color: lightgoldenrodyellow;
+        }
+
+        .centered{
+            position: absolute;
+            font-size: 30px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+
+        .fotokonten{
+            width: 200px;
+            height: 200px;
+            border: 4px solid lavenderblush;
+            border-radius: 5%;
+        }
+
+        .fotoaside{
+            width: 300px;
+            height: 100px;
+            border: 5px solid lavenderblush;
+        }
+        
+        .fotososmed{
+            width: 50px;
+            height: 50px;
+            border: 5px solid lavenderblush;
+        }
+
+        .footer{
+            padding: 30px;
+            background-color: lavender;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        </style>
+       
+        
+    </head>
+
+    <body>
+        <header>
+            <div class="jumbotron">
+                <h1>Things I'm crazy about</h1><br>
+                by Ika Dian
+            </div>
+                
+            </div>
+                <ul class="nav">
+                    <li><a href="">Home</a>
+                        <ul>
+                            <li><a href=""></a>Submenu</li>
+                            <li><a href=""></a>Submenu</li>
+                            <li><a href=""></a>Submenu</li>
+                            <li><a href=""></a>Submenu</li>
+                        </ul>
+                    </li>
+                    <li><a href="">Profile</a>
+                        <ul>
+                            <li><a href=""></a>Submenu</li>
+                            <li><a href=""></a>Submenu</li>
+                            <li><a href=""></a>Submenu</li>
+                            <li><a href=""></a>Submenu</li>
+                        </ul>
+                    </li>
+                    <li><a href="">Contact</a>
+                        <ul>
+                            <li><a href=""></a>Submenu</li>
+                            <li><a href=""></a>Submenu</li>
+                            <li><a href=""></a>Submenu</li>
+                            <li><a href=""></a>Submenu</li>
+                        </ul>
+                    </li>
+                </ul>     
+        </header>
+        
+        <div class="content">
+            <table>
+                <tr>
+                    <td><center><img class="fotokonten" style="display: grid;" width="flexible" src="https://lh3.googleusercontent.com/proxy/sPSgM4P0nK-PS2OG5I7QpDNUdKm814Gi2_TYGm4rmd7MB8Pq4BCyRL79zvzqrTRBE_yy9HuWxEo60FYCbutp04juOpbFZYi8U4VdwsFb7WOG2uk78ZT3dFQ">
+                        <br><b>Food</b><br>
+                        one of the best things, <br>
+                        do you agree?<br>
+                    <button type="button" onclick="alert('Ikr!')">Agree!</button> <button type="button" onclick="alert('Well okay')">Nah..</button></center>
+                    </td>
+                    <td><center><img class="fotokonten" style="display: grid;" width="flexible" src="https://ae01.alicdn.com/kf/HTB1rSIhHH5YBuNjSspoq6zeNFXaH/Music-Rock-Car-Sticker-Decals-Reflective-for-LINKIN-PARK-car-whole-body-window-tail.jpg">
+                        <br><b>Linkin Park</b><br>
+                        The song always resonances with me,<br>
+                        does it with you too?<br>
+                    <button type="button" onclick="alert('Cool!')">Yeah!</button> <button type="button" onclick="alert('One of the legendary bands I know')">Idk them</button></center>
+                    </td>
+                    <td><center><img class="fotokonten" style="display: grid;" width="flexible" src="https://ecs7.tokopedia.net/img/cache/700/product-1/2018/7/4/3617340/3617340_d1c5bd8b-cc3b-4a3f-b670-057e2286ac78_720_714.jpg">
+                        <br><b>Blazer</b><br>
+                        I'm kind of obssesed with it,<br>
+                        are you too?<br>
+                    <button type="button" onclick="alert('LOL We bestie!')">Yes!</button> <button type="button" onclick="alert('Oh I see')">Nope</button></center>
+                    </td>
+                </tr>
+                <tr>
+                    <td><center><img class="fotokonten" style="display: grid;" width="flexible" src="https://previews.123rf.com/images/eugenesergeev/eugenesergeev1705/eugenesergeev170500228/78865401-caribbean-beach-square-background-white-sand-azure-shore-water-under-cloudy-blue-sky-dominican-repub.jpg">
+                        <br><b>Beach</b><br>
+                        I'm missing the beach,<br>
+                        don't you?<br>
+                    <button type="button" onclick="alert('*cries*')">Me too</button> <button type="button" onclick="alert('Ok')">Not really</button></center>
+                    </td>
+                    <td><center><img class="fotokonten" style="display: grid;" width="flexible" src="https://jessieonajourney.com/wp-content/uploads/2019/09/blank-slate-tea-1.jpg">
+                        <br><b>Cafe</b><br>
+                        Cafe and Coffee,<br>
+                        a duo combination.<br>
+                    <button type="button" onclick="alert('Me too')">Agree</button> <button type="button" onclick="alert('Its ok I prefer milk too)">Nope</button></center>
+                    </td>
+                    <td><center><img class="fotokonten" style="display: grid;" width="flexible" src="https://cdn.shopify.com/s/files/1/1466/4208/products/Marle_Bed_with_Studded_Square_Frame_Natural_Linen_KIng.jpg?v=1568804399">
+                        <br><b>Bed</b><br>
+                        I love my bed,<br>
+                        I bet you do too<br>
+                    <button type="button" onclick="alert('LOL')">Yeah!</button> <button type="button" onclick="alert('Youre kidding')">Nope</button></center>
+                    </td>
+                </tr>
+              
+            </table>
+        </div>
+
+        <div class="aside">
+            <table>
+                <tr>
+                    <th colspan="2">
+                        <center><img class="fotoaside" style="display: grid;" width="flexible" src="https://i.pinimg.com/736x/9d/7c/e6/9d7ce608477141ab988ce20dca9a15f6.jpg">
+                        </center>
+                    </th>
+                </tr>
+                <tr>
+                    <Td colspan="2"><center><img class="fotoaside" style="display: grid;" width="flexible" src="https://data.whicdn.com/images/336108956/original.jpg">
+                    </center>
+                    </Td>
+                </tr>
+                <tr>
+                    <Td colspan="2"><h3>Rate this page!</h3>
+                        <span><select name="rating" id="rating">
+                        <option value="perfect">Perfect!</option>
+                        <option value="awesome">Awesome!</option>
+                        <option value="good">Good</option>
+                        <option value="okay">Okay</option>
+                        </select>
+                        <input type="submit" value="Submit">
+                        </span>
+                    </Td>
+                </tr>
+                <Tr>
+                    <td colspan="2"><h3>Connect with me!</h3>
+                    <center><a href="https://twitter.com/""><img class="fotososmed" src="https://img.icons8.com/plasticine/2x/twitter.png"></a>
+                    <a href="https://www.instagram.com/"><img class="fotososmed" src="https://i.pinimg.com/474x/8d/da/07/8dda07a9847930226a1c217e6b3f3cb6.jpg"></a>
+                    <a href="https://www.facebook.com/"><img class="fotososmed" src="https://i.pinimg.com/originals/b3/26/b5/b326b5f8d23cd1e0f18df4c9265416f7.png"></a>
+                    </center>
+                    </td>
+                </Tr>
+            </table>
+        </div>
+
+    
+    </body>
+
+
+</html>
