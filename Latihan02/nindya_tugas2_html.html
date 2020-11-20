@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<head>
+    <link rel="icon" type="image/png" href="C:\Users\hp\Pictures\jeruk.png">
+    <title>Tugas Web Layout</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        header {
+            height: 65px;
+            width:100%;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .header-left {
+            float:left;
+        }
+
+        .header-right > li {
+            float:right;
+            padding: 0 25px;
+            letter-spacing: 1px;
+            color:#ffffff;
+            list-style: none;
+            line-height:65px;
+            transition: all 0.5s;
+            }
+
+        .header-right > li > a {
+        color:#ffffff;
+            }
+
+        .header-right > li > ul {
+            display:none;
+            position:sticky;
+            list-style: none;
+            }
+
+        .header-right > li:hover {
+            background: rgb(212, 226, 9);
+            }
+
+        .header-right > li:hover > ul {
+            display:table-row;
+            }
+
+        .header-right > li:hover > a {
+            color:#ffffff;
+            }
+
+        .header-right > li > ul  a {
+            background: rgb(212, 226, 9);
+            }
+
+        .header-right > li > ul  a:hover {
+             background:lime;
+             display:block;
+            }
+
+        .logo1 {
+            width: 70px;
+            margin-top: 10px;
+            margin-left: 10px;
+            border-radius: 10px;
+        }
+
+        .judulweb {
+            position:absolute;
+            top:-10px;
+            left:100px;
+            color:white;
+            font-family: fantasy;
+            letter-spacing: 10px;
+            font-style:normal;
+        }
+
+        .judulweb2 {
+            position: absolute;
+            top:30px;
+            left:100px;
+            color:white;
+            font-style: italic;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+
+        .isiform {
+            float:left;
+            padding-left:120px;
+        }
+
+        .isi {
+            padding: 250px 0 100px 0;
+            background-image:url(https://image.freepik.com/free-photo/assortment-tropical-fruits-white-background_23-2148144248.jpg);
+            background-size: cover;
+        }
+
+        .subcontent1 h1 {
+            color:rgb(255, 167, 5);
+            position: absolute;
+            top: 200px;
+            left: 500px;
+        }
+
+        .subcontent1 p {
+            color:rgb(255, 167, 5);
+            position: absolute;
+            top: 240px;
+            left: 500px;
+        }
+
+        .isi2 {
+            padding-top:40px;
+        }
+
+        table {
+            width:100%;
+        }
+
+        td {
+            height: 10px;
+        }
+        .tabel1 {
+            margin-bottom: 100px;
+        }
+
+        .tabel2 {
+            align-items: center;
+        }
+
+        .penjelasan > td {
+            padding-left: 40px;
+            padding-top: 0px;
+            height:20px;
+        }
+
+        .gambar1 > td {
+            padding-bottom:40px;
+        }
+
+        .keterangan1 {
+            float:left;
+            padding-left:30px;
+        }
+
+        .keterangan2 {
+            float:left;
+            margin-left:-110px;
+        }
+        
+        .gambarbuah {
+            height:200px;
+            width:200px;
+            border:5px solid green;
+            border-radius:15%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="tab1">
+            <div class="header-left">
+                <img class="logo1" src="https://images.freeimages.com/images/large-previews/9b5/oranges-1323150.jpg">
+                <h1 class="judulweb">PJI Fruit</h1>
+                <p class="judulweb2">Your fruits come to home</p>
+            </div>
+            <div class="header-right">
+                <li>
+                    <a href=""> Contact </a>
+                </li>
+                <li>
+                    <a href=""> How to Order</a>
+                </li>
+                <li>
+                    <a href=""> List of Fruits</a>
+                    <ul>
+                        <li><a href="">Orange</a></li>
+                        <li><a href="">Apple</a></li>
+                        <li><a href="">Mango</a></li>
+                    </ul>
+                </li>
+            </div>
+        </div>
+    </header>
+
+    <div class="isi">
+        <div class="subcontent1">
+            <h1>FRESH FRUIT, EVERY DAY</h1>
+            <p>We deliver your fruits vitamin daily needs, straight to your home.</p>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <form class="isiform" action="/action_page.php">
+        <label for="partfrom">Sort by :</label>
+        <select name="partfrom" id="partfrom">
+            <option value="bandung">Most Popular</option>
+            <option value="jakarta">New Product</option>
+            <option value="bodetabek">Price to Lowest to Highest</option>
+            <option value="lainnya">Price to Highest to Lowest</option>
+        </select>
+    </form>
+
+    <div class="isi2">
+        <table>
+            <tr class="gambar1">
+                <td><center><img class="gambarbuah" src="https://www.pasarlampung.com/wp-content/uploads/2020/04/Apel-malang-buah-pasar-lampung.jpg"><br>
+                    <span style="font-size: larger; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bolder;">Apel Malang</span><br>
+                    <span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Mulai dari Rp24.000,- / kg</span><br>
+                    <button a href="">Add to Cart</button>
+                </center>
+                </td>
+                <td><center><img class="gambarbuah" src="https://cdn.ilotte.me/images/product/web/20/01/26/00/0/000000260120_02_800.jpg"><br>
+                    <span style="font-size: larger; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bolder;">Jeruk Keprok</span><br>
+                    <span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Mulai dari Rp 15.000,- / kg</span><br>
+                    <button a href="">Add to Cart</button>
+                </center>
+                </td>
+                <td><center><img class="gambarbuah" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//105/MTA-6545976/aljabar_project_aljabar_project_java_premium_jeruk_baby_-1_kg-_full02_n7peoftv.jpg"><br>
+                    <span style="font-size: larger; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bolder;">Jeruk Baby</span><br>
+                    <span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Mulai dari Rp 18.000,- / kg</span><br>
+                    <button a href="">Add to Cart</button>
+                </center>
+                </td>
+            </tr>
+            
+            <tr class="gambar1">
+                <td><center><img  class="gambarbuah" src="https://pui.ristekbrin.go.id/_assets/upload/image_produk_lembaga/main_1551444154.png"><br>
+                    <span style="font-size: larger; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bolder;">Mangga Garifta Merah</span><br>
+                    <span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Mulai dari Rp 25.000,- / kg</span><br>
+                    <button a href="">Add to Cart</button>
+                </center>
+                </td>
+                <td><center><img class="gambarbuah" src="https://i0.wp.com/resepkoki.id/wp-content/uploads/2019/03/mangga-alpukat.jpg?fit=1300%2C941&ssl=1"><br>
+                    <span style="font-size: larger; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bolder;">Mangga Alpukat</span><br>
+                    <span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+                    Mulai dari Rp26.000,- / kg</span><br>
+                    <button a href="">Add to Cart</button>
+                </center>
+                </td>
+                <td><center><img class="gambarbuah" src="https://ecs7.tokopedia.net/img/cache/700/product-1/2018/12/7/4403309/4403309_5277fa43-d76a-4543-96b8-824a46b2aa58_500_500.jpg"><br>
+                    <span style="font-size: larger; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bolder;">Apel Fuji</span><br>
+                    <span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+                    Mulai dari Rp13.000,- / kg</span><br>
+                    <button a href="">Add to Cart</button>
+                </center>
+                </td>
+            </tr>
+        </table>
+        
+       
+        
+    </div>
+</body>
