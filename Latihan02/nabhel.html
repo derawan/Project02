@@ -1,7 +1,7 @@
 <html>
 
 <script>
-    // i have some questions, they are stated in the comments
+   
     MyDatabase = {
         Customer : [
         {"id":"1","name":"irfan","email":"irfan@mail.net","sex":3,"address":"jalan 1"},
@@ -11,7 +11,7 @@
         {"id":"5","name":"ausmick","email":"ausmick@mail.net","sex":1,"address":"jalan 5"},
         {"id":"6","name":"ika","email":"ika@mail.net","sex":2,"address":"jalan 6"},
         ],
-        //Question 1 -  why we put the titles in ""
+     
         Sex : [
             {name:'Male'},
             {name:'Female'}
@@ -21,7 +21,7 @@
         SearchCustomer : function(name_search, field) {
             // set result as empty
             var result = [];
-            for(var i=0; i<this.Customer.length; i++) //More explanation about this line of code
+            for(var i=0; i<this.Customer.length; i++) 
             {
                 if (this.Customer[i][field] === name_search)
                 {
@@ -33,7 +33,7 @@
                         address:this.Customer[i].address,
                         jeniskelamin:this.SearchSex(this.Customer[i].sex)
                     }
-                    result.push(search_result); //More explanation about this line of code
+                    result.push(search_result); 
                 }
             }
             return result;
