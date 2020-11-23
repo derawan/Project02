@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<head>
+    <title>Exercise CSS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+
+        .header {
+        float: left;
+        margin-right: 0px;
+        }
+
+        table {
+            width:100%;
+        }
+
+        .judul {
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+
+
+        td {
+            border: 1px solid black;
+            height: 100px;
+        }
+        .tabel1 {
+            margin-bottom: 100px;
+        }
+
+        span {
+            background:blue;
+            color:white;
+
+        }
+        span:hover{
+            background:yellow;
+            color:red;
+        }
+        
+        .hormenu {
+            padding:0px;
+        }
+
+        .hormenu > li {
+            float:left;
+            background:purple;
+            color: white;
+            list-style:none;
+            padding:5px;   
+        }
+
+        .hormenu > li > ul {
+                display:none;
+                position:absolute;
+                background:#dedede;
+            }
+        
+        
+            .hormenu > li:hover {
+                background:#afaaaa;
+                color:#ff00ff;
+            }
+            .hormenu > li:hover > ul {
+                display:block;
+            }
+
+            .hormenu > li:hover > a {
+                color:#ffffff;
+            }
+
+
+            .hormenu > li > a {
+                color:#ffffff;
+                
+            }
+
+            .hormenu > li > ul  a {
+                background:red;
+            }
+
+            .hormenu > li > ul  a:hover {
+                background:lime;
+            }
+
+
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+
+    <div >
+        <img class="gambar1" src="https://images.freeimages.com/images/large-previews/675/fruit-1328048.jpg"
+            style="width:50px; height:50px; border-radius: 20px;">
+        <h1 class="judul1"></h1>
+    
+        Fresh Fruit</h1>
+        <p
+        style="font-style: italic; font-size: smaller;">
+        "Your fruits come to home."</p>
+    </div>
+
+    <div class="header">
+        <a href="#">Lessons</a>
+        <a href="#">Sign in</a>
+        <a href="#" class="login">Log in</a>
+      </div>
+      <br>
+    
+    <ul class="hormenu">
+        <li>
+            <a href="">My Horizontal Menu 01</a>
+            <ul>
+                <li><a href="">Menu 01</a></li>
+                <li><a href="">Menu 02</a></li>
+                <li><a href="">Menu 03</a></li>
+                <li><a href="">Menu 04</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">My Horizontal Menu 02</a>
+            <ul>
+                <li><a href="">Menu 01</a></li>
+                <li><a href="">Menu 02</a></li>
+                <li><a href="">Menu 03</a></li>
+                <li><a href="">Menu 04</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">My Horizontal Menu 03</a>
+            <ul>
+                <li><a href="">Menu 01</a></li>
+                <li><a href="">Menu 02</a></li>
+                <li><a href="">Menu 03</a></li>
+                <li><a href="">Menu 04</a></li>
+            </ul>
+        </li>
+    </ul>
+    <br><br>
+
+    <p>
+        Apel Malang <img src="https://images.freeimages.com/images/large-previews/675/fruit-1328048.jpg"
+            style="width:50px; height:150px;">
+    </p>
+
+    <p>
+        PARAGRAPH 2
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum massa libero, fringilla in justo sit amet, laoreet tempor ligula. Proin justo risus, vulputate sit amet consectetur in, suscipit rutrum nibh. Ut erat elit, bibendum in turpis sit amet, viverra ullamcorper leo. Nunc iaculis, tellus vitae finibus ultricies, lacus nisl sodales lectus, ut iaculis orci dolor sed turpis. Cras egestas vulputate faucibus. Vestibulum iaculis nibh hendrerit bibendum viverra. Ut iaculis tellus in tempus tempus. Nunc finibus, tortor eu accumsan luctus, urna urna pellentesque tellus, id bibendum sem nunc a dolor. Nullam feugiat feugiat euismod. Phasellus sagittis erat eget justo placerat aliquam.
+    </p>
+
+    <p>
+        PARAGRAPH 3
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum massa libero, fringilla in justo sit amet, laoreet tempor ligula. Proin justo risus, vulputate sit amet consectetur in, suscipit rutrum nibh. Ut erat elit, bibendum in turpis sit amet, viverra ullamcorper leo. Nunc iaculis, tellus vitae finibus ultricies, lacus nisl sodales lectus, ut iaculis orci dolor sed turpis. Cras egestas vulputate faucibus. Vestibulum iaculis nibh hendrerit bibendum viverra. Ut iaculis tellus in tempus tempus. Nunc finibus, tortor eu accumsan luctus, urna urna pellentesque tellus, id bibendum sem nunc a dolor. Nullam feugiat feugiat euismod. Phasellus sagittis erat eget justo placerat aliquam.
+    </p>
+    
+    
+    
+    
+    <div class="isi">
+    <table>
+        <tr class="tabel1">
+            <td colspan="5">Data 1</td>
+            
+        </tr>
+        <tr style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+            <td>Data 4</td>
+            <td>Data 5</td>
+        </tr>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td colspan="2">Data 3</td>
+            <td>Data 4</td>
+        </tr>
+        <tr>
+            <td>Abcde</td>
+            <td>Abcde</td>
+            <td>Abcde</td>
+            <td>Abcde</td>
+            <td>Abcde</td>
+        </tr>
+    </table>
+    </div>
+
+    
+
+
+
+
+
+</body>
