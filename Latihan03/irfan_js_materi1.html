@@ -5,7 +5,13 @@
 
         <script>
 
+function ClickYok() {
+                    $('#mytable').addClass('hidden')
+                }
 
+                function ClickYuk() {
+                    $('#mytable').removeClass('hidden')
+                }                
 
                 function clickMe() {
                     alert(1);
@@ -104,10 +110,81 @@
                     $('#badan').html(str);
                 }
 
+
+
+
+                Animal = [
+                {'name': 'Ayam', 'leg':2},
+                {'name': 'Bebek', 'leg':2},
+                {'name': 'Angsa', 'leg':2},
+                {'name': 'Sapi', 'leg':4},
+                {'name': 'Kambing', 'leg':4},
+                {'name': 'Ikan', 'leg':0},
+                ];
+
+                function myfunction(param)
+                {
+                    
+                    elem = [];
+                    elem.push("<ol>")
+                     for(a in param)
+                     {
+                         console.log(a);
+                        elem.push('<li>')
+                        elem.push(param[a].name)
+                        elem.push('</li>')
+                     }
+
+                    //  for(a=0; a < param.length;a++)
+                    //  {
+                    //      console.log(a);
+                    //     elem.push('<li>')
+                    //     elem.push(param[a].name)
+                    //     elem.push('</li>')
+                    //  }
+                     elem.push("</ol>")
+                     teks = elem.join('');
+
+
+
+                        $('#badan').html(teks);
+
+                }
+
+
+                function MySecondFunction(record, indeks)
+                {
+                    return record[indeks];
+                }
+
+
+
+
         </script>
+        <style>
+           
+            .hidden { display:none}
+        </style>
     </head>
 
     <body id="badan">
-        <ol><li>sdfsdfsd</li></ol>
+       <span onclick="ClickYok()"> Click Me</span>
+<hr/>
+       <span onclick="ClickYuk()"> Click Me</span>
+       
+
+
+        <table id="mytable" >
+            <tr>
+                <td nama="irfan">Data 01   $(element).css(stylename, value)</td>   
+            </tr>
+            <tr>
+                <td nama="nabhel">Data 01   $(element).addClass(classname)</td>   
+            </tr>
+            <tr>
+                <td nama="ika">Data 01   $(element).attr(attributename, attributevalue)</td>   
+            </tr>
+
+        </table>
     </body>
 </html>
