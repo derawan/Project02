@@ -1,0 +1,38 @@
+.nav {
+    background-color: #D9B89F;
+}
+.nav-link {
+    color: white;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px 10px;
+}
+.group1 {
+    background-color:white;
+    height: 80px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+    #nav1 {
+        background-color: #F0ECE6;
+        padding-right: 32%;
+    }
+
+.font {
+    background-color: #B58B51;
+    height: 246px;
+    padding-left: 25%;
+    padding-top: 20px;
+}
+
+.image5 {
+    padding-left: 25%;
+}
+.image5 > h1 {
+    padding-top: 20px;
+
+}
+.image5 > p {
+    font-size: 13px;
+}
