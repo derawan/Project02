@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+
+
+        <script>
+
+                function  BuatTabel(rowcount, colcount){
+                    var myElement = [];
+                    myElement.push('<table border="1" style="background:red">');
+                    var i = 0;
+                    for(row = 0; row < rowcount; row++ )
+                    {
+                        myElement.push('<tr onclick="clickMe()">');
+                        for(col = 0; col < colcount; col++)
+                        {
+                            i++;
+                            myElement.push('<td>')
+                            myElement.push('data ' + i)
+                            myElement.push('</td>')
+                        }
+                    
+                        myElement.push('</tr>');
+
+                    }
+                    myElement.push('</table>');
+
+                    var str = myElement.join('')
+                    $('#badan').html(str);
+                } 
+                function  BuatList(rowcount, colcount){
+                    var myElement = [];
+                    myElement.push('<ul style="background:yellow">');
+                    var i = 0;
+                    for(row = 0; row < rowcount; row++ )
+                    {
+                        myElement.push('<li onclick="clickMe()">');
+                        for(col = 0; col < colcount; col++)
+                        {
+                            i++;
+                            myElement.push('<li>')
+                            myElement.push('List ' + i)
+                            myElement.push('</li>')
+                        }
+                    
+                        myElement.push('</li>');
+
+                    }
+                    myElement.push('</ul>');
+
+                    var str = myElement.join('')
+                    $('#badan').html(str);
+                } 
+                function  BuatDiv(rowcount, colcount){
+                    var myElement = [];
+                    myElement.push('<div style="background:green">');
+                    var i = 0;
+                    for(row = 0; row < rowcount; row++ )
+                    {
+                        myElement.push('<div onclick="clickMe()">');
+                        for(col = 0; col < colcount; col++)
+                        {
+                            i++;
+                            myElement.push('<div>')
+                            myElement.push('Div ' + i)
+                            myElement.push('</div>')
+                        }
+                    
+                        myElement.push('</div>');
+
+                    }
+                    myElement.push('</div>');
+
+                    var str = myElement.join('')
+                    $('#badan').html(str);
+                } 
+
+                
+
+        </script>
+    </head>
+
+    <body id="badan">
+    </body>
+</html>
