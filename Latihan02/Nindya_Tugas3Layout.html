@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<head>
+    <title>Wedding Hub - Nindya</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        .preheader {
+            width: 100%;
+            height: 40px;
+            background-color: rgb(217, 184, 159);
+        }
+
+        .header {
+            width: 100%;
+            height: 80px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .header1 {
+            width: 100%;
+            height: 30px;
+            background-color: rgb(240, 236, 230);
+        }
+
+        .header2 {
+            width: 100%;
+            height: 246px;
+            background-color: rgb(181, 139, 81);
+        }
+
+        .content {
+            width: 100%;
+            height: 1450px;
+            background-color: white;
+        }
+
+        .prefooter {
+            width: 100%;
+            height: 149px;
+            background-color: rgb(230, 220, 220);
+            border-color: rgb(112, 112, 112);
+        }
+
+        .footer {
+            width: 100%;
+            height: 40px;
+            background-color: rgb(36, 39, 37);
+        }
+
+        .preheader-right {
+            float:right;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            padding: 10px 25px 0 0;
+        }
+
+        .preheader-right a {
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px 4px #000000;
+            text-decoration: none;
+        }
+
+        .header-left {
+            padding: 18px 0 22px 16.3px;
+        }
+
+        .header1-left {
+            position: absolute;
+            left: 287px;
+            top: 115px;
+        }
+
+        .header1-left > li {
+            float: left;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 16px;
+            list-style: none;
+            padding-right: 30px;
+        }
+
+        .header1-left a {
+            text-decoration: none;
+            color: rgb(114, 112, 112);
+        }
+
+        .header1-left > li:hover a {
+            color: rgb(203, 83, 83);
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 16%);
+            font-weight: 600;
+        }
+
+        .header1-left > li > ul {
+            display: none;
+            list-style: none;
+        }
+
+        .header1-left > li:hover > ul  {
+            display: block;
+            position: absolute;
+            background-color: rgb(240, 236, 230);
+            z-index: 3;
+            height: 406px;
+            width: 1100px;
+        }
+
+        .header1-left > li:hover > ul > li  {
+            float: left;
+        }
+
+        .boxwed {
+            width: 307px;
+            height: 300px;
+            background-color: white;
+            border: rgb(112, 112, 112) solid 1px;
+            margin: 20px;
+        }
+
+        .kotakwed {
+            position: relative;
+            top: 350px;
+            left: -50px;
+            
+        }
+
+        .judul {
+            margin-bottom: -10px;
+            padding: 1px 0 0 375px;
+        }
+        .judul h1 {
+            position: absolute;
+            top: 150px;
+            left: 400px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 40px;
+            margin-bottom: -10px;
+            text-shadow: 8px 8px 8px rgba(0, 0, 0, 16%);
+        }
+
+        .judul p {
+            font-size: 20px;
+            position: absolute;
+            top: 210px;
+            left: 400px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #icon1, #icon2 {
+            position: absolute;
+        }
+
+        #icon1 {
+            top: 190px;
+            right: 53px;
+            z-index: 1;
+        }
+
+        #icon2 {
+            top: 170px;
+            right: 20px;
+            z-index: 2;
+        }
+
+        .biodata {
+            width: 302px;
+            height: 441px;
+            background-color: white;
+            border:1px solid rgb(190, 187, 180);
+            border-radius: 5%;
+            padding:20px;
+            position:absolute;
+            left:30px;
+            top:183px;
+        }
+
+        .alamat {
+            position: relative;
+            padding-left: 10px;
+            padding-top: 100px;   
+        }
+
+        .alamat p {
+            position: absolute;
+            top: 80px;
+            left: 50px;
+            font-size: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .avail {
+            position: relative;
+            padding-left: 10px;
+            padding-top: 100px;   
+        }
+
+        .avail p {
+            position: absolute;
+            top: 80px;
+            left: 50px;
+            font-size: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .rating {
+            float: left;
+            position: relative;
+            padding-left: 1px;
+            padding-top: 70px;
+        }
+
+        .gambar1-1 {
+            position: absolute;
+            top: 440px;
+            left: 420px;
+        }
+
+        .txt-gambar1 {
+            position: absolute;
+            top: 660px;
+            left: 430px;
+            font-size: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 17px;
+            color: rgb(72, 64, 64);
+        }
+
+        .txt-gambar2 {
+            position: absolute;
+            top: 660px;
+            left: 550px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 17px;
+            color: rgb(72, 64, 64);
+        }
+
+        .txt-gambar3 {
+            position: absolute;
+            top: 660px;
+            left: 670px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 17px;
+            color: rgb(72, 64, 64);
+        }
+
+        .package {
+            position: absolute;
+            top: 410px;
+            left: 800px;
+            width: 40%;
+        }
+
+        .package h1 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 40px;
+            color: rgb(72, 64, 64);
+        }
+
+        .package p {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 16px;
+            color: rgb(72, 64, 64);
+            line-height: 17px;
+        }
+
+        .box1 {
+            width: 273px;
+            height: 256px;
+            background-color: white;
+            border: rgb(112, 112, 112) solid 1px;
+            margin: 20px;
+            float: left;
+            position: relative;
+            top: 320px;
+            left: 770px;
+        }
+
+        .textbox1, .textbox2, .textbox3  {
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: rgb(72, 64, 64);
+            position: relative;
+        }
+        .textbox1  {
+            font-size: 16px;
+            left: 10px;
+        }
+
+        .textbox2 {
+            font-size: 12px;
+            left: 15px;
+        }
+
+        .textbox3 {
+            font-size: 30px;
+            right: 10px;
+            text-align: right;
+        }
+
+        .mainbox {
+            width: 649px;
+            height: 754px;
+            background-color: black;
+            position: absolute;
+            top: 1050px;
+            left: 1050px;
+            z-index: 1;
+        }
+
+        .mainbox2 {
+            width: 649px;
+            height: 141px;
+            z-index: 2;
+            background-color: rgba(206, 128, 128, 0.58);
+            position: absolute;
+            top: 1663px;
+            left: 1050px;
+        }
+
+        .boxfooter {
+            margin-top: 10px;
+        }
+
+        .boxfooter img {
+            float: left;
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+
+        .textboxfooter {
+            width: 25%;
+            float: left;
+            margin-left: 10px;
+            margin-top: 30px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .isifooter {
+            float:right;
+            color: white;
+            padding-top: 5px;
+            padding-right: 25px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 20px;
+        }
+    </style>
+
+<body>
+    <div class="preheader">
+        <div class="preheader-right">
+            <a href="#" class="signup">SIGN UP | </a>
+            <a href="#" class="signup">SIGN IN | </a>
+            <a href="#" class="signup">BECOME A VENDOR</a>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="header-left">
+            <img src="../BAHAN/Group 1.png">
+        </div>
+    </div>
+
+    <div class="header1">
+        <ul class="header1-left">
+                <li><a href="">Wedding Vendor</a></li>
+                <li>
+                    <a href="">Wedding Ideas</a>
+                    <ul>
+                        <li>
+                            <div class="boxwed">
+                                <img src="../BAHAN/Image 7.png" style="padding: 17px">
+                                <div class="textbox1"><b>PACKAGE #1</b></div>
+                                <div class="textbox2">PACKAGE #1</div>
+                                <div class="textbox3"><b>USD 15000</b></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="boxwed">
+                                <img src="../BAHAN/Image 7.png" style="padding: 17px">
+                                <div class="textbox1"><b>PACKAGE #1</b></div>
+                                <div class="textbox2">PACKAGE #1</div>
+                                <div class="textbox3"><b>USD 15000</b></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="boxwed">
+                                <img src="../BAHAN/Image 7.png" style="padding: 17px">
+                                <div class="textbox1"><b>PACKAGE #1</b></div>
+                                <div class="textbox2">PACKAGE #1</div>
+                                <div class="textbox3"><b>USD 15000</b></div>
+                            </div>
+                        </li>
+                        <img class="kotakwed" src="../BAHAN/Icon awesome-arrow-alt-circle-right.png">
+                    </ul>
+                </li>
+                <li><a href="">Wedding Stories</a></li>
+        </ul>
+    </div>
+
+    <div class="header2">
+        <div class="judul">
+            <h1>WEDDING HUB WEDDING HUB</h1>
+            <p>your wedding journey started from here</p>
+        </div>
+        <div id="icon-judul1">
+            <div id="icon1">
+                <img src="../BAHAN/Image 1.png">    
+            </div>
+            <div id="icon2">
+                <img src="../BAHAN/Image 4.png">    
+            </div>
+        </div>
+
+    </div>
+
+    <div class="content">
+        <div class="biodata">
+            <img src="../BAHAN/Ellipse 1.png"
+            style= "float:left;">
+            <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',sans-serif;
+            color: rgb(203, 83, 83);
+            font-size: 18px;
+            padding-left: 15px;
+            ">
+            MEL GIBSON
+            </span>
+            <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',sans-serif;
+            color: rgb(199, 157, 157);
+            font-size: 14px;
+            padding-left: 15px;
+            ">
+            wedding planer</span>
+            <div class="alamat">
+                <img src="../BAHAN/Icon awesome-map-marker-alt-1.png"
+                style="width: 18px; height: 24px;">
+            
+                <p> <b>ALAMAT</b> <br>
+                Perumahan Kencana Wungu <br>
+                Blok D 14 No 35 <br>
+                Jakarta Selatan <br>
+                Indonesia <br>
+                </p>
+            </div>
+            <div class="avail">
+                <img src="../BAHAN/Icon feather-clock-1.png"
+                style="width: 18px; height: 18px;">
+            
+                <p> <b>AVAILABILITY</b> <br>
+                Senin - Sabtu <br>
+                09:00 - 17:00 <br>
+                </p>
+            </div>
+            <div class="rating">
+                <img src="../BAHAN/Icon feather-star.png">
+                <img src="../BAHAN/Icon feather-star.png">
+                <img src="../BAHAN/Icon feather-star.png">
+                <img src="../BAHAN/Icon feather-star.png">
+                <img src="../BAHAN/Icon feather-star.png">
+                <span style="font-size: 40px; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: bolder; padding-left: 20px;">9.8</span>
+            </div>
+
+        </div>
+
+        <div class="gambar1">
+            <div class="gambar1-1">
+                <img src="../BAHAN/Image 5.png">
+            </div>
+            <div class="txt-gambar1">
+                <p>
+                <b>Availability :</b><br>
+                Senin - Sabtu<br>
+                09:00 - 17:00
+                </p>
+            </div>
+            <div class="txt-gambar2">
+                <p>
+                <b>Availability :</b><br>
+                Senin - Sabtu<br>
+                09:00 - 17:00
+                </p>
+            </div>
+            <div class="txt-gambar3">
+                <p>
+                <b>Availability :</b><br>
+                Senin - Sabtu<br>
+                09:00 - 17:00
+                </p>
+            </div>
+        </div>
+
+        <div class="package">
+            <h1>PACKAGE #1</h1>
+
+            <p> asdfadsf asdf adsfasdfasdfadsf zxcv asdasfasdfasdf cxzv asdfasdfasfasd zxcv asdfasdfasdf asdfasdf
+                Asdfasdf asdfasd fasdfas fasdfasdf asdfasdf asdfasdf. Asdfasdfasdf asdfasdf asdfasdfasd fasdfasdfasdf
+                Asdfasdfasdfasdf asdfasd. Asdfaskfasdfadsfasd fads </p>
+                    
+            <p> asdfadsf asdf adsfasdfasdfadsf zxcv asdasfasdfasdf cxzv asdfasdfasfasd zxcv asdfasdfasdf asdfasdf
+                Asdfasdf asdfasd fasdfas fasdfasdf asdfasdf asdfasdf. Asdfasdfasdf asdfasdf asdfasdfasd fasdfasdfasdf
+                Asdfasdfasdfasdf asdfasd. Asdfaskfasdfadsfasd fads </p>
+                
+            <p> asdfadsf asdf adsfasdfasdfadsf zxcv asdasfasdfasdf cxzv asdfasdfasfasd zxcv asdfasdfasdf asdfasdf
+                Asdfasdf asdfasd fasdfas fasdfasdf asdfasdf asdfasdf. Asdfasdfasdf asdfasdf asdfasdfasd fasdfasdfasdf
+                Asdfasdfasdfasdf asdfasd. Asdfaskfasdfadsfasd fads </p>
+                
+                
+        </div>
+
+        <div class="boxpackage">
+            <div class="box1">
+                <img src="../BAHAN/Image 7.png"
+                style="float:right">
+                <div class="textbox1"><b>PACKAGE #1</b></div>
+                <div class="textbox2">PACKAGE #1</div>
+                <div class="textbox3"><b>USD 15000</b></div>
+            </div>
+            <div class="box1">
+                <img src="../BAHAN/Image 7.png"
+                style="float:right">
+                <div class="textbox1"><b>PACKAGE #1</b></div>
+                <div class="textbox2">PACKAGE #1</div>
+                <div class="textbox3"><b>USD 15000</b></div>
+            </div>
+            <div class="box1">
+                <img src="../BAHAN/Image 7.png"
+                style="float:right">
+                <div class="textbox1"><b>PACKAGE #1</b></div>
+                <div class="textbox2">PACKAGE #1</div>
+                <div class="textbox3"><b>USD 15000</b></div>
+            </div>
+        </div>
+
+        <div class="tiffany">
+            <div>
+                <img src="../BAHAN/Ellipse 2.png" style="position: absolute; top: 1050px; left: 400px;">
+                <p style="position: absolute; top: 1040px; left: 550px; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Great Package asdfadsfasdfasdfasf<br>
+                Ads sfasdf asdfadsf zcxvzxcv asdfadsfas dfasdfasdfasdfasdf<br>
+                Asdfasdfasdfasdfasdfasdf asdfasdfasdfasdfasdfasdfasdf<br>
+                Asdfasdfadsfasf asdfasdfadsfasdfafsd<br><br>
+                <span style="font-weight: bolder; float:right"><u>tiffany@mail.net</u></span>
+            </div>
+
+            <div>
+                <img src="../BAHAN/Ellipse 2.png" style="position: absolute; top: 1250px; left: 400px;">
+                <p style="position: absolute; top: 1240px; left: 550px; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Great Package asdfadsfasdfasdfasf<br>
+                Ads sfasdf asdfadsf zcxvzxcv asdfadsfas dfasdfasdfasdfasdf<br>
+                Asdfasdfasdfasdfasdfasdf asdfasdfasdfasdfasdfasdfasdf<br>
+                Asdfasdfadsfasf asdfasdfadsfasdfafsd<br><br>
+                <span style="font-weight: bolder; float:right"><u>tiffany@mail.net</u></span>
+            </div>
+
+            <div>
+                <img src="../BAHAN/Ellipse 2.png" style="position: absolute; top: 1450px; left: 400px;">
+                <p style="position: absolute; top: 1440px; left: 550px; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Great Package asdfadsfasdfasdfasf<br>
+                Ads sfasdf asdfadsf zcxvzxcv asdfadsfas dfasdfasdfasdfasdf<br>
+                Asdfasdfasdfasdfasdfasdf asdfasdfasdfasdfasdfasdfasdf<br>
+                Asdfasdfadsfasf asdfasdfadsfasdfafsd<br><br>
+                <span style="font-weight: bolder; float:right"><u>tiffany@mail.net</u></span>
+            </div>
+
+            <div>
+                <img src="../BAHAN/Ellipse 2.png" style="position: absolute; top: 1650px; left: 400px;">
+                <p style="position: absolute; top: 1640px; left: 550px; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Great Package asdfadsfasdfasdfasf<br>
+                Ads sfasdf asdfadsf zcxvzxcv asdfadsfas dfasdfasdfasdfasdf<br>
+                Asdfasdfasdfasdfasdfasdf asdfasdfasdfasdfasdfasdfasdf<br>
+                Asdfasdfadsfasf asdfasdfadsfasdfafsd<br><br>
+                <span style="font-weight: bolder; float:right"><u>tiffany@mail.net</u></span>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="mainbox">
+                <img src="../BAHAN/Rectangle -1.png">
+            </div>
+            <div class="mainbox2">
+                <div class="mainboxtext">
+                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    font-size: 16px; color: white; margin-left: 35px;"><b>PACKAGE #1</b></p>
+                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    font-size: 26px; color: white; margin-left: 35px; margin-top: -15px"><b>PACKAGE #1</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="prefooter">
+        <div class="boxfooter">
+            <img src="../BAHAN/Rectangle -3.png">
+            <div class="textboxfooter">
+            Great Package asdfadsfasdfasdfasf<br>
+            Ads sfasdf asdfadsf zcxvzxcv asdfadsfas dfasdfasdfasdfasdf<br>
+            Asdfasdfasdfasdfasdfasdf asdfasdfasdfasdfasdfasdfasdf<br>
+            Asdfasdfadsfasf asdfasdfadsfasdfafsd</div>
+        </div>
+        <div class="boxfooter">
+            <img src="../BAHAN/Rectangle -6.png">
+            <div class="textboxfooter">
+            Great Package asdfadsfasdfasdfasf<br>
+            Ads sfasdf asdfadsf zcxvzxcv asdfadsfas dfasdfasdfasdfasdf<br>
+            Asdfasdfasdfasdfasdfasdf asdfasdfasdfasdfasdfasdfasdf<br>
+            Asdfasdfadsfasf asdfasdfadsfasdfafsd</div>
+        </div>
+        <div class="boxfooter">
+            <img src="../BAHAN/Rectangle -7.png">
+            <div class="textboxfooter">
+            Great Package asdfadsfasdfasdfasf<br>
+            Ads sfasdf asdfadsf zcxvzxcv asdfadsfas dfasdfasdfasdfasdf<br>
+            Asdfasdfasdfasdfasdfasdf asdfasdfasdfasdfasdfasdfasdf<br>
+            Asdfasdfadsfasf asdfasdfadsfasdfafsd</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="isifooter">
+            CODEVA
+        </div>
+    </div>
+</body>
