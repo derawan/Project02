@@ -28,21 +28,13 @@
                     var str = myElement.join('')
                     $('#badan').html(str);
                 } 
-                function  BuatList(rowcount, colcount){
+                function  BuatList(rowcount){
                     var myElement = [];
                     myElement.push('<ul style="background:yellow">');
                     var i = 0;
                     for(row = 0; row < rowcount; row++ )
                     {
-                        myElement.push('<li onclick="clickMe()">');
-                        for(col = 0; col < colcount; col++)
-                        {
-                            i++;
-                            myElement.push('<li>')
-                            myElement.push('List ' + i)
-                            myElement.push('</li>')
-                        }
-                    
+                        myElement.push('<li> List test');
                         myElement.push('</li>');
 
                     }
