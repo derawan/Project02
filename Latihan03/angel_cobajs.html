@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+
+        <script>
+
+
+            function CobaCoba () {
+                var myElement = [];
+                myElement.push ('<table border="1">');
+                var i = 0;
+                for (row=0; row<rowcount; row++);
+                {
+                    myElement.push('<tr>');
+                    for(col=0; col<colcount; col++)
+                    {
+                        i++;
+                        myElement.push('<td>')
+                        myElement.push('data' +i)
+                        myElement.push('</td>')
+                    }
+
+                    myElement.push ('</tr>')
+
+                }
+                myElement.push ('</table>');
+
+                var str = myElement.join('')
+                $('#coba').html(str);
+            }
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+
+
+</html>

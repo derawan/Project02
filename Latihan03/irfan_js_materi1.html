@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+
+
+        <script>
+
+
+
+                function clickMe() {
+                    alert(1);
+                }
+
+                function  MakeElementUsingString(rowcount, colcount){
+                    var myElement = [];
+                    myElement.push('<table border="1" style="background:red">');
+                    var i = 0;
+                    for(row = 0; row < rowcount; row++ )
+                    {
+                        myElement.push('<tr onclick="clickMe()">');
+                        for(col = 0; col < colcount; col++)
+                        {
+                            i++;
+                            myElement.push('<td>')
+                            myElement.push('data ' + i)
+                            myElement.push('</td>')
+                        }
+                    
+                        myElement.push('</tr>');
+
+                    }
+                    myElement.push('</table>');
+
+                    var str = myElement.join('')
+                    $('#badan').html(str);
+                } 
+
+                function  MakeElementUsingString2(rowcount, colcount){
+                    var tabel = $('<table border="1" style="background:red"></table>');
+                    var i = 0;
+                    for(row = 0; row < rowcount; row++ )
+                    {
+                        var tr = $('<tr></tr>')
+                        tr.on('click', function(){
+                            alert('hello')
+                        })
+                        //myElement.push('<tr>');
+                        for(col = 0; col < colcount; col++)
+                        {
+                            i++;
+                            var td = $('<td>data '+i+'</td>');
+                            td.appendTo(tr)
+                        }
+                        tr.appendTo(tabel);
+                    
+                        
+
+                    }
+
+                    tabel.appendTo($('#badan'));
+
+                    
+                    
+                } 
+
+
+                function BuildTable()
+                {
+                    Customer = [
+                    {'id':1, name:'irfan'},
+                    {'id':2, name:'nindya'},
+                    {'id':3, name:'angelene'},
+                    {'id':3, name:'angelene'},
+                    {'id':3, name:'angelene'},
+                    {'id':3, name:'angelene'},
+                    {'id':3, name:'angelene'},
+                    {'id':3, name:'angelene'},
+                    {'id':3, name:'angelene'},
+                    {'id':3, name:'angelene'},
+                    ];
+
+                    var myElement = [];
+                    myElement.push('<table border="1" style="background:white">');
+                    var i = 0;
+                    rowcount = Customer.length;
+                    for(row = 0; row < rowcount; row++ )
+                    {
+                        myElement.push('<tr onclick="clickMe()">');
+                        colcount = Customer[row].length
+                        for(a in Customer[row])
+                        {
+                            i++;
+                            myElement.push('<td>')
+                            myElement.push(Customer[row][a])
+                            myElement.push('</td>')
+                        }
+                    
+                        myElement.push('</tr>');
+
+                    }
+                    myElement.push('</table>');
+
+                    var str = myElement.join('')
+                    $('#badan').html(str);
+                }
+
+        </script>
+    </head>
+
+    <body id="badan">
+        <ol><li>sdfsdfsd</li></ol>
+    </body>
+</html>
