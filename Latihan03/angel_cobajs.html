@@ -5,30 +5,82 @@
         <script>
 
 
-            function CobaCoba () {
-                var myElement = [];
-                myElement.push ('<table border="1">');
-                var i = 0;
-                for (row=0; row<rowcount; row++);
+            function AkuCoba(rowcount, colcount)
+            {
+                var cobacoba = [];
+                var i = 0; 
+                cobacoba.push('<table border="1" style="background: pink">');
+                for(row = 0; row < rowcount; row++)
                 {
-                    myElement.push('<tr>');
-                    for(col=0; col<colcount; col++)
+
+                 cobacoba.push('<tr>');
+                    for(col = 0; col < colcount; col++)
                     {
-                        i++;
-                        myElement.push('<td>')
-                        myElement.push('data' +i)
-                        myElement.push('</td>')
+
+                        i++
+                        cobacoba.push('<td>')
+                        cobacoba.push('data' + i)
+                        cobacoba.push('</td>')
                     }
-
-                    myElement.push ('</tr>')
-
+                cobacoba.push('</tr>');
                 }
-                myElement.push ('</table>');
 
-                var str = myElement.join('')
+                cobacoba.push('</table>');
+
+                var str = cobacoba.join('')
                 $('#coba').html(str);
+                 
             }
+
+
+            function BikinTable()
+                {
+                    Customer = [
+                    {'id':1, name:'angel'},
+                    {'id':2, name:'verlyn'},
+                    {'id':3, name:'lene'},
+                    {'id':4, name:'yoyoyo'}
+                    ];
+
+                    var ayoBikin = [];
+                    ayoBikin.push('<table border="1" style="background:yellow">');
+                    var i = 0;
+                    rowcount = Customer.length;
+                    for(row = 0; row < rowcount; row++ )
+                    {
+                        ayoBikin.push('<tr>');
+                        colcount = Customer[row].length
+                        for(a in Customer[row])
+                        {
+                            i++;
+                            ayoBikin.push('<td>')
+                            ayoBikin.push(Customer[row][a])
+                            ayoBikin.push('</td>')
+                        }
+                    
+                        ayoBikin.push('</tr>');
+
+                    }
+                    ayoBikin.push('</table>');
+
+                    var str = ayoBikin.join('')
+                    $('#coba').html(str);
+                }
+
+            function BikinList()
+            {
+                
+            }
+
+
+
         </script>
+
+        <body id="coba">
+
+
+
+        </body>
 
 
 
