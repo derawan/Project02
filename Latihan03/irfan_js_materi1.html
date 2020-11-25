@@ -5,8 +5,6 @@
 
         <script>
 
-
-
                 function clickMe() {
                     alert(1);
                 }
@@ -24,16 +22,14 @@
                             myElement.push('<td>')
                             myElement.push('data ' + i)
                             myElement.push('</td>')
-                        }
-                    
+                        }                    
                         myElement.push('</tr>');
-
                     }
                     myElement.push('</table>');
 
                     var str = myElement.join('')
                     $('#badan').html(str);
-                } 
+                }
 
                 function  MakeElementUsingString2(rowcount, colcount){
                     var tabel = $('<table border="1" style="background:red"></table>');
@@ -52,15 +48,8 @@
                             td.appendTo(tr)
                         }
                         tr.appendTo(tabel);
-                    
-                        
-
                     }
-
                     tabel.appendTo($('#badan'));
-
-                    
-                    
                 } 
 
 
