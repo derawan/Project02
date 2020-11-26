@@ -1,0 +1,19 @@
+{
+    "item" : [
+        {
+            "name" : "irfan",
+            "address" : "bogor",
+            "sex" : "male"
+        },
+        {
+            "name" : "habibi",
+            "address" : "jakarta",
+            "sex" : "male"
+        },
+        {
+            "name" : "ausmick",
+            "address" : "surabaya",
+            "sex" : "female"
+        }
+    ]
+}
