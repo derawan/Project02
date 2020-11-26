@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+
+        <script>
+            DataCust = [
+                {"id":1, "name": "Irfan", "Address":"Jalan 1"},
+                {"id":2, "name": "Nindya", "Address":"Jalan 2"},
+                {"id":3, "name": "Habibi", "Address":"Jalan 3"},
+                {"id":4, "name": "Rizki", "Address":"Jalan 4"},
+                {"id":5, "name": "Fahri", "Address":"Jalan 5"},
+                {"id":6, "name": "Ika", "Address":"Jalan 6"},
+                {"id":7, "name": "Nabhel", "Address":"Jalan 7"},
+                {"id":8, "name": "Gleen", "Address":"Jalan 8"},
+                ];
+
+            function TabelCust()
+                {
+                    var ElemCust = [];
+                    ElemCust.push('<table border="1">');
+                    var i = 0;
+                    rowcount = DataCust.length;
+                    for(row = 0; row < rowcount; row++ )
+                    {
+                        ElemCust.push();
+                        colcount = DataCust[row].length
+                        for(a in DataCust[row])
+                        {
+                            i++;
+                            ElemCust.push('<td>')
+                            ElemCust.push(DataCust[row][a])
+                            ElemCust.push('</td>')
+                        }
+                        ElemCust.push('</tr>');
+                    }
+                    ElemCust.push('</table>');
+                    var str = ElemCust.join('')
+                    $('#isi').html(str);
+                }
+        </script>
+
+        <style>
+        #CustTable {
+        border: 1px solid black;
+        }
+
+        th, td {
+        border: 0.5px solid black;
+        }
+        </style>
+    </head>
+
+    <body id="isi">
+
+        <table id="CustTable">
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>ADDRESS</th>
+            </tr>
+                <tr>
+                <td>1</td>
+                <td>Irfan</td>
+                <td>Jalan 1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Nindya</td>
+                <td>Jalan 2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Habibi</td>
+                <td>Jalan</td>
+            </tr>
+        </table>
+
+
+        <script>
+
+            function fx(param1, param2, param3)
+            {
+                let a = 2 * (param1*param1);
+                let b = param2;
+                let c = param3;
+                return a + b + c;
+            }
+        </script>
+    </body>
+</html>
