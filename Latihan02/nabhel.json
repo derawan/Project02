@@ -1,0 +1,19 @@
+
+{
+    "item" : [
+        {
+            "name": "nabhel",
+            "address": "jakarta"
+        },
+
+        {
+            "name": "ikan",
+            "address": "borgor"
+        },
+
+        {
+            "name": "gleen",
+            "address": "bandung"
+        }
+    ]
+}
