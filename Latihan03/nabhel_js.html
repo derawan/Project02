@@ -6,52 +6,10 @@
     <script>
 
         // function for list
-        function BuildList() {
-            var listOfObjects = [];
-            var a = ["nabhel", "codeva", "ika"];
-            a.forEach(function (entry) {
-                var singleObj = {};
-                singleObj['type'] = 'vehicle';
-                singleObj['value'] = entry;
-                listOfObjects.push(singleObj);
-            });
-        }
+
 
 
         // Function for table
-        function BuildTable() {
-            clients = [
-                { 'id': 1, name: 'tom' },
-                { 'id': 2, name: 'magi' },
-                { 'id': 3, name: 'jammy' },
-                { 'id': 3, name: 'lisa' },
-                { 'id': 3, name: 'adam' },
-                { 'id': 3, name: 'nabhel' },
-
-            ];
-
-            var table = [];
-            table.push('<table border="1" style="background:white">');
-            var i = 0;
-            rowcount = clients.length;
-            for (row = 0; row < rowcount; row++) {
-                table.push('<tr onclick="clickMe()">'); // this sends an alert message!!
-                colcount = clients[row].length
-                for (a in clients[row]) {
-                    i++;
-                    table.push('<td>')
-                    table.push(clients[row][a])
-                    table.push('</td>')
-                }
-
-                table.push('</tr>');
-
-            }
-            table.push('</table>');
-
-            var str = table.join('')
-
-        }
 
 
 // function for div

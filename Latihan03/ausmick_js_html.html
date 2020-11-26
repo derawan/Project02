@@ -2,10 +2,8 @@
     <head>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
         <script>
-<<<<<<< HEAD
+// <<<<<<< HEAD =======
 
-<<<<<<< HEAD
-=======
 function ClickYok() {
                     $('#mytable').addClass('hidden')
                 }
@@ -14,9 +12,7 @@ function ClickYok() {
                     $('#mytable').removeClass('hidden')
                 }                
 
->>>>>>> 33fe402790e784aa04245db456a7438c7882fb16
-=======
->>>>>>> a3446a1a66cc830fe7856291e268cc628ce6b3ed
+// >>>>>>> d875e2caef086677c7b6c2536dc488308200aa46
                 function clickMe() {
                     alert(1);
                 }
@@ -33,19 +29,16 @@ function ClickYok() {
                             myElement.push('<td>')
                             myElement.push('data ' + i)
                             myElement.push('</td>')
-                        }                    
+                        }
+                    
                         myElement.push('</tr>');
+
                     }
                     myElement.push('</table>');
 
                     var str = myElement.join('')
                     $('#badan').html(str);
-<<<<<<< HEAD
-                }
-
-=======
                 } 
->>>>>>> 33fe402790e784aa04245db456a7438c7882fb16
                 function  MakeElementUsingString2(rowcount, colcount){
                     var tabel = $('<table border="1" style="background:red"></table>');
                     var i = 0;
@@ -64,9 +57,6 @@ function ClickYok() {
                         }
                         tr.appendTo(tabel);
                     }
-<<<<<<< HEAD
-                    tabel.appendTo($('#badan'));
-=======
                     
 
                     tabel.appendTo($('#badan'));
@@ -75,7 +65,6 @@ function ClickYok() {
                 function BuildList()
                 {
                     
->>>>>>> 33fe402790e784aa04245db456a7438c7882fb16
                 } 
                 function BuildTable()
                 {
@@ -175,10 +164,6 @@ function ClickYok() {
     </head>
 
     <body id="badan">
-        <ol><li>sdfsdfsd</li></ol>
-        <ol><li>sdfsdfsd</li></ol>
-        <ol><li>sdfsdfsd</li></ol>
-        <ol><li>sdfsdfsd</li></ol>
        <span onclick="ClickYok()"> Click Me</span>
 <hr/>
        <span onclick="ClickYuk()"> Click Me</span>
