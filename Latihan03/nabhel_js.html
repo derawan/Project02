@@ -1,62 +1,133 @@
 <html>
 
 <head>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <div>Sending data to server - using GET</div>
+    <div>
+        <form action="test.html">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><input name="nama"></td>
+                </tr>
+                <tr>
+                    <td>gender</td>
+                    <td>
+                        <select name="gender">
+                            <option value="1">male</option>
+                            <option value="2">female</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>address</td>
+                    <td><textarea name="alamat"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="click me">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+
+    </div>
+
+
+
+    <div>
+        <div>Sending data to server - using POST</div>
+        <form action="test.html" method="POST">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><input name="nama"></td>
+                </tr>
+                <tr>
+                    <td>gender</td>
+                    <td>
+                        <select name="gender">
+                            <option value="1">male</option>
+                            <option value="2">female</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>address</td>
+                    <td><textarea name="alamat"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="click me">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+
+        <a href="test.html?nama=dd&gender=1&alamat=vvv&fsd=react">Click Me</a>
+
+    </div>
+
+    <div>
+        <a id="get">Click Me - AJAX : GET</a>
+    </div>
+    <div>
+        <a id="post">Click Me - AJAX : POST</a>
+    </div>
 
     <script>
+        function callAjax(data, tipe) {
+            mydata = data
 
-        // function for list
-        function BuildList() {
-            var listOfObjects = [];
-            var a = ["nabhel", "codeva", "ika"];
-            a.forEach(function (entry) {
-                var singleObj = {};
-                singleObj['type'] = 'vehicle';
-                singleObj['value'] = entry;
-                listOfObjects.push(singleObj);
-            });
-        }
-
-
-        // Function for table
-        function BuildTable() {
-            clients = [
-                { 'id': 1, name: 'tom' },
-                { 'id': 2, name: 'magi' },
-                { 'id': 3, name: 'jammy' },
-                { 'id': 3, name: 'lisa' },
-                { 'id': 3, name: 'adam' },
-                { 'id': 3, name: 'nabhel' },
-
-            ];
-
-            var table = [];
-            table.push('<table border="1" style="background:white">');
-            var i = 0;
-            rowcount = clients.length;
-            for (row = 0; row < rowcount; row++) {
-                table.push('<tr onclick="clickMe()">'); // this sends an alert message!!
-                colcount = clients[row].length
-                for (a in clients[row]) {
-                    i++;
-                    table.push('<td>')
-                    table.push(clients[row][a])
-                    table.push('</td>')
+            $.ajax(
+                {
+                    url: "test.html",
+                    data: mydata,
+                    type: tipe,
+                    success: function () {
+                        alert('success')
+                    },
+                    error: function () {
+                        alert('failed')
+                    }
                 }
 
-                table.push('</tr>');
-
-            }
-            table.push('</table>');
-
-            var str = table.join('')
+            )
 
         }
 
+        $(
+            function () {
+                vget = $('#get');
+                vpost = $('#post');
 
-// function for div
+                vget.on('click', function () {
+                    dataku = {
+                name: "irfan",
+                address: "bogor"
+            }
+                    callAjax(dataku, 'get');
+                });
+                vpost.on('click', function () {
+                    datamu = {
+                name: "ikan",
+                address: "jakarta"
+            }
+                    callAjax(datamu, 'post');
+                });
 
+            }
+        )
 
 
 
     </script>
+</body>
+
+</html>

@@ -4,21 +4,9 @@
 
 
         <script>
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-function ClickYok() {
-                    $('#mytable').addClass('hidden')
-                }
->>>>>>> 3d624502275a3feb72045dfb4446f9b28b4bb894
 
 
->>>>>>> 33fe402790e784aa04245db456a7438c7882fb16
-=======
->>>>>>> a3446a1a66cc830fe7856291e268cc628ce6b3ed
+
                 function clickMe() {
                     alert(1);
                 }
@@ -36,23 +24,17 @@ function ClickYok() {
                             myElement.push('<td>')
                             myElement.push('data ' + i)
                             myElement.push('</td>')
-                        }                    
+                        }
+                    
                         myElement.push('</tr>');
+
                     }
                     myElement.push('</table>');
 
                     var str = myElement.join('')
                     $('#badan').html(str);
-<<<<<<< HEAD
-                }
-
-=======
                 } 
-<<<<<<< HEAD
 
-=======
->>>>>>> 33fe402790e784aa04245db456a7438c7882fb16
->>>>>>> 3d624502275a3feb72045dfb4446f9b28b4bb894
                 function  MakeElementUsingString2(rowcount, colcount){
                     var tabel = $('<table border="1" style="background:red"></table>');
                     var i = 0;
@@ -70,13 +52,6 @@ function ClickYok() {
                             td.appendTo(tr)
                         }
                         tr.appendTo(tabel);
-<<<<<<< HEAD
-=======
-                    }
-<<<<<<< HEAD
-                    tabel.appendTo($('#badan'));
-=======
->>>>>>> 3d624502275a3feb72045dfb4446f9b28b4bb894
                     
                         
 
@@ -86,7 +61,6 @@ function ClickYok() {
 
                     
                     
->>>>>>> 33fe402790e784aa04245db456a7438c7882fb16
                 } 
 
 
@@ -129,38 +103,25 @@ function ClickYok() {
                     var str = myElement.join('')
                     $('#badan').html(str);
                 }
-
+                
+                function list() {
+                    Customer = [
+                    {'id':1, name:'irfan'},
+                    {'id':2, name:'nindya'},
+                    {'id':3, name:'angelene'},
+                    {'id':3, name:'angelene'},
+                    {'id':3, name:'angelene'},
+                    {'id':3, name:'angelene'},
+                    {'id':3, name:'angelene'},
+                    {'id':3, name:'angelene'},
+                    {'id':3, name:'angelene'},
+                    {'id':3, name:'angelene'},
+                    ]
+                }
         </script>
     </head>
 
     <body id="badan">
         <ol><li>sdfsdfsd</li></ol>
-        <ol><li>sdfsdfsd</li></ol>
-        <ol><li>sdfsdfsd</li></ol>
-        <ol><li>sdfsdfsd</li></ol>
-<<<<<<< HEAD
-    </body>
-    <body id="badan">
-        
-=======
-       <span onclick="ClickYok()"> Click Me</span>
-<hr/>
-       <span onclick="ClickYuk()"> Click Me</span>
-       
-
-
-        <table id="mytable" >
-            <tr>
-                <td nama="irfan">Data 01   $(element).css(stylename, value)</td>   
-            </tr>
-            <tr>
-                <td nama="nabhel">Data 01   $(element).addClass(classname)</td>   
-            </tr>
-            <tr>
-                <td nama="ika">Data 01   $(element).attr(attributename, attributevalue)</td>   
-            </tr>
-
-        </table>
->>>>>>> 3d624502275a3feb72045dfb4446f9b28b4bb894
     </body>
 </html>

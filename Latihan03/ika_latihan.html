@@ -1,0 +1,177 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+
+        <script>
+
+
+            function klikAq(){
+                alert(1);
+            }
+
+
+            function PelangiBuatTabel(rowcount, colcount)
+            {
+                var PelangiTabel = [];
+                var i = 0; 
+                PelangiTabel.push('<table border="1" style="background: beige">');
+                for(row = 0; row < rowcount; row++)
+                {
+
+                 PelangiTabel.push('<tr onClick="klikAq()">');
+                    for(col = 0; col < colcount; col++)
+                    {
+
+                        i++
+                        PelangiTabel.push('<td>')
+                        PelangiTabel.push('data' + i)
+                        PelangiTabel.push('</td>')
+                    }
+                PelangiTabel.push('</tr>');
+                }
+
+                PelangiTabel.push('</table>');
+
+                var str = PelangiTabel.join('')
+                $('#Caramel').html(str);
+                 
+            }
+            
+
+            function PelangiBuatTabel2(rowcount, colcount)
+            {
+                var i = 0; 
+                var kotak = $('<table border="1" style="background: pink"></table>');
+                for(row = 0; row < rowcount; row++)
+                {
+                    var tr = $('<tr></tr>')
+                    tr.on('click', function()
+                    {
+                        alert('Halloh')
+                    })
+
+                    for(col = 0; col < colcount; col++)
+                    {
+ 
+                        i++
+                        var td = $('<td>data '+i+'</td>')
+                        td.appendTo(tr)
+
+                    }
+                    tr.appendTo(kotak);
+                }
+                kotak.appendTo($('#Caramel'));
+                
+            }
+            
+
+            function BangunTabel(){
+                Costumer = [
+                    {'id':1, name: 'Ika'},
+                    {'id':2, name: 'Nindya'},
+                    {'id':3, name: 'Angelene'},
+                    {'id':4, name: 'Habibie'},
+                    {'id':5, name: 'Rizki'},
+                    {'id':6, name: 'Irfan'}
+                ];
+
+            
+            
+                var PelangiTabel = [];
+                var i = 0; 
+                PelangiTabel.push('<table border="1" style="background: beige">');
+                rowcount = Costumer.length;
+                for(row = 0; row < rowcount; row++)
+                {
+
+                    PelangiTabel.push('<tr onClick="klikAq()">');
+                    colcount = Costumer[row].length
+                    for(a in Costumer[row])
+                    {
+
+                        i++
+                        PelangiTabel.push('<td>')
+                        PelangiTabel.push(Costumer[row][a])
+                        PelangiTabel.push('</td>')
+                    }
+                    PelangiTabel.push('</tr>');
+                }
+
+                PelangiTabel.push('</table>');
+
+                var str = PelangiTabel.join('')
+                $('#Caramel').html(str);
+                 
+
+            }
+
+
+            function BangunTabel2(){
+                Customer = [
+                    {'id':1, name: 'Ika'},
+                    {'id':2, name: 'Nindya'},
+                    {'id':3, name: 'Angelene'},
+                    {'id':4, name: 'Habibie'},
+                    {'id':5, name: 'Rizki'},
+                    {'id':6, name: 'Irfan'}
+                ];
+
+                var i = 0; 
+                var kotak = $('<table border="1" style="background: pink"></table>');
+                var rowcount = Customer.length;
+                for(row = 0; row < rowcount; row++)
+                {
+                    var tr = $('<tr></tr>')
+                    tr.on('click', function()
+                    {
+                        alert('Halloh')
+                    })
+
+                    var colcount = Customer[row].length;
+                    for(a in Customer[row])
+                    {
+ 
+                        i++
+                        var td = $('<td>' + Customer[row][a] + '</td>')
+                        td.appendTo(tr)
+
+                    }
+                    tr.appendTo(kotak);
+                }
+                kotak.appendTo($('#Caramel'));
+                
+            }
+
+
+            Customer = [
+                    {'id':1, name: 'Ika'},
+                    {'id':2, name: 'Nindya'},
+                    {'id':3, name: 'Angelene'},
+                    {'id':4, name: 'Habibie'},
+                    {'id':5, name: 'Rizki'},
+                    {'id':6, name: 'Irfan'}
+                ];
+
+            function BuatListYuk(pintu){
+               Human = []
+               Human.push("<ol>")
+                    for(a in pintu){
+                        Human.push('<li>')
+                        Human.push(pintu[a].name)
+                        Human.push('</li>')
+                    }
+                Human.push("</ol>")
+                teks = Human.join('')
+
+
+                $('#Caramel').html(teks);
+            }
+        </script>
+        
+    </head>
+
+    <body id="Caramel">
+
+
+    </body>
+</html>

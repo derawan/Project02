@@ -1,28 +1,21 @@
 <html>
     <head>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
-
-
         <script>
-<<<<<<< HEAD
+// <<<<<<< HEAD =======
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 function ClickYok() {
                     $('#mytable').addClass('hidden')
                 }
->>>>>>> 3d624502275a3feb72045dfb4446f9b28b4bb894
 
+                function ClickYuk() {
+                    $('#mytable').removeClass('hidden')
+                }                
 
->>>>>>> 33fe402790e784aa04245db456a7438c7882fb16
-=======
->>>>>>> a3446a1a66cc830fe7856291e268cc628ce6b3ed
+// >>>>>>> d875e2caef086677c7b6c2536dc488308200aa46
                 function clickMe() {
                     alert(1);
                 }
-
                 function  MakeElementUsingString(rowcount, colcount){
                     var myElement = [];
                     myElement.push('<table border="1" style="background:red">');
@@ -36,23 +29,16 @@ function ClickYok() {
                             myElement.push('<td>')
                             myElement.push('data ' + i)
                             myElement.push('</td>')
-                        }                    
+                        }
+                    
                         myElement.push('</tr>');
+
                     }
                     myElement.push('</table>');
 
                     var str = myElement.join('')
                     $('#badan').html(str);
-<<<<<<< HEAD
-                }
-
-=======
                 } 
-<<<<<<< HEAD
-
-=======
->>>>>>> 33fe402790e784aa04245db456a7438c7882fb16
->>>>>>> 3d624502275a3feb72045dfb4446f9b28b4bb894
                 function  MakeElementUsingString2(rowcount, colcount){
                     var tabel = $('<table border="1" style="background:red"></table>');
                     var i = 0;
@@ -70,39 +56,29 @@ function ClickYok() {
                             td.appendTo(tr)
                         }
                         tr.appendTo(tabel);
-<<<<<<< HEAD
-=======
                     }
-<<<<<<< HEAD
-                    tabel.appendTo($('#badan'));
-=======
->>>>>>> 3d624502275a3feb72045dfb4446f9b28b4bb894
                     
-                        
-
-                    }
 
                     tabel.appendTo($('#badan'));
 
-                    
-                    
->>>>>>> 33fe402790e784aa04245db456a7438c7882fb16
                 } 
-
-
+                function BuildList()
+                {
+                    
+                } 
                 function BuildTable()
                 {
                     Customer = [
                     {'id':1, name:'irfan'},
                     {'id':2, name:'nindya'},
                     {'id':3, name:'angelene'},
-                    {'id':3, name:'angelene'},
-                    {'id':3, name:'angelene'},
-                    {'id':3, name:'angelene'},
-                    {'id':3, name:'angelene'},
-                    {'id':3, name:'angelene'},
-                    {'id':3, name:'angelene'},
-                    {'id':3, name:'angelene'},
+                    {'id':4, name:'dudu'},
+                    {'id':5, name:'evi'},
+                    {'id':6, name:'fikri'},
+                    {'id':7, name:'gideon'},
+                    {'id':8, name:'hanan'},
+                    {'id':9, name:'ijuk'},
+                    {'id':10, name:'jeje'},
                     ];
 
                     var myElement = [];
@@ -130,19 +106,64 @@ function ClickYok() {
                     $('#badan').html(str);
                 }
 
+
+
+
+                Animal = [
+                {'name': 'Ayam', 'leg':2},
+                {'name': 'Bebek', 'leg':2},
+                {'name': 'Angsa', 'leg':2},
+                {'name': 'Sapi', 'leg':4},
+                {'name': 'Kambing', 'leg':4},
+                {'name': 'Ikan', 'leg':0},
+                ];
+
+                function myfunction(param)
+                {
+                    
+                    elem = [];
+                    elem.push("<ol>")
+                     for(a in param)
+                     {
+                         console.log(a);
+                        elem.push('<li>')
+                        elem.push(param[a].name)
+                        elem.push('</li>')
+                     }
+
+                    //  for(a=0; a < param.length;a++)
+                    //  {
+                    //      console.log(a);
+                    //     elem.push('<li>')
+                    //     elem.push(param[a].name)
+                    //     elem.push('</li>')
+                    //  }
+                     elem.push("</ol>")
+                     teks = elem.join('');
+
+
+
+                        $('#badan').html(teks);
+
+                }
+
+
+                function MySecondFunction(record, indeks)
+                {
+                    return record[indeks];
+                }
+
+
+
+
         </script>
+        <style>
+           
+            .hidden { display:none}
+        </style>
     </head>
 
     <body id="badan">
-        <ol><li>sdfsdfsd</li></ol>
-        <ol><li>sdfsdfsd</li></ol>
-        <ol><li>sdfsdfsd</li></ol>
-        <ol><li>sdfsdfsd</li></ol>
-<<<<<<< HEAD
-    </body>
-    <body id="badan">
-        
-=======
        <span onclick="ClickYok()"> Click Me</span>
 <hr/>
        <span onclick="ClickYuk()"> Click Me</span>
@@ -161,6 +182,5 @@ function ClickYok() {
             </tr>
 
         </table>
->>>>>>> 3d624502275a3feb72045dfb4446f9b28b4bb894
     </body>
 </html>
