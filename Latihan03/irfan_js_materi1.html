@@ -2,6 +2,21 @@
     <head>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
         <script>
+<<<<<<< HEAD
+
+<<<<<<< HEAD
+=======
+function ClickYok() {
+                    $('#mytable').addClass('hidden')
+                }
+
+                function ClickYuk() {
+                    $('#mytable').removeClass('hidden')
+                }                
+
+>>>>>>> 33fe402790e784aa04245db456a7438c7882fb16
+=======
+>>>>>>> a3446a1a66cc830fe7856291e268cc628ce6b3ed
                 function clickMe() {
                     alert(1);
                 }
@@ -18,16 +33,19 @@
                             myElement.push('<td>')
                             myElement.push('data ' + i)
                             myElement.push('</td>')
-                        }
-                    
+                        }                    
                         myElement.push('</tr>');
-
                     }
                     myElement.push('</table>');
 
                     var str = myElement.join('')
                     $('#badan').html(str);
+<<<<<<< HEAD
+                }
+
+=======
                 } 
+>>>>>>> 33fe402790e784aa04245db456a7438c7882fb16
                 function  MakeElementUsingString2(rowcount, colcount){
                     var tabel = $('<table border="1" style="background:red"></table>');
                     var i = 0;
@@ -46,6 +64,9 @@
                         }
                         tr.appendTo(tabel);
                     }
+<<<<<<< HEAD
+                    tabel.appendTo($('#badan'));
+=======
                     
 
                     tabel.appendTo($('#badan'));
@@ -54,6 +75,7 @@
                 function BuildList()
                 {
                     
+>>>>>>> 33fe402790e784aa04245db456a7438c7882fb16
                 } 
                 function BuildTable()
                 {
