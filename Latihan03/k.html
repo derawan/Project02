@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title></title>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="txt" name="name" value="" autocomplete="off"/></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input type="txt" name="address" value="" autocomplete="off"/></td>
+            </tr>
+            <tr>
+                <td><button id="add">Add Me</button></td>
+            </tr>
+        </table>
+        <table id="list">
+
+        </table>
+        <script>
+            $(
+                function() {
+                    var btn = $('#add');
+                    var name = $('[name="name"]');
+                    var address = $('[name="address"]');
+                    var list = $('#list');
+
+                    btn.on('click', function(){alert('hello')
+                });
+                }
+            );
+        </script>
+    </body>
+</html>
