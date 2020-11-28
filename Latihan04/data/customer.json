@@ -1,0 +1,19 @@
+{
+    "jenis_kelamin":[
+        {"id":"1", "name":"Male"},
+        {"id":"2", "name":"Female"}
+    ],
+    "pendidikan" :[
+        {"id":"1", "name":"SD"},
+        {"id":"2", "name":"SMP"},
+        {"id":"3", "name":"SMU"},
+        {"id":"4", "name":"D-3"},
+        {"id":"5", "name":"S-1"},
+        {"id":"6", "name":"S-2"},
+        {"id":"7", "name":"S-3"}
+    ],
+    "customer" : [
+        {"id":"1001"}
+    ]
+
+}

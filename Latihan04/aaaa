@@ -1,0 +1,30 @@
+searchboxEl = $('.searchbox');
+                    searchboxEl.on('keypress',(e)=>{
+                        var keypress = e.key;
+                        var inputEl = $(e.target);
+                        if (keypress == 'Enter')
+                        {
+                            var katadicari = inputEl.val();
+                            var ketemu = false;
+                            var indeks = 0;
+                            hasil = null;
+                            while(!ketemu) {
+
+                                if (Product[indeks].sku==katadicari)
+                                {
+                                    ketemu = true;
+                                    hasil = Product[indeks]
+                                }
+                                indeks++;
+                                if (indeks >= Product.length)
+                                {
+                                    ketemu = true;
+                                }
+                            }
+                            if (hasil!= null) {
+                                $('.product_selector').val(hasil.sku);
+                                $('.product_selector').trigger('change')
+                            }
+                            inputEl.val('')
+                        }
+                    })
