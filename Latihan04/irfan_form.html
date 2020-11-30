@@ -1,0 +1,253 @@
+<html>
+<head>
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    
+    <div>
+        <ul>
+            <li><a class="btnAdd" onclick="AddForm()">Add</a></li>
+         
+        </ul>
+        <table class="myform">
+            <tr>
+                <td>Title Name</td>
+                <td><input name="title" type="text"/></td>
+            </tr>
+            <tr>
+                <td>Genre</td>
+                <td><select name="genre">
+                    <option value="">[Please Select One]</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Horor">Horor</option>
+                    <option value="Action">Action</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Year</td>
+                <td><input name="year" type="text"/></td>
+            </tr>
+            <tr>
+                <td>Actors/Actress</td>
+                <td><input name="actor" type="text"/></td>
+            </tr>
+            <tr>
+                <td>
+                    <button name="submitAdd">Proceed Add</button>
+                    <button name="submitUpdate">Proceed Update</button>
+                </td>
+               
+            </tr>
+        </table>
+    </div>
+
+
+    <div>
+        <table  border="1">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Year</th>
+                    <th>Actor s/ Actress</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody class="mybody"></tbody>
+            <tfoot></tfoot>
+
+        </table>
+    </div>
+
+    <script>
+
+        Movies = [];
+
+        function ClearForm() {
+            // let get the element 
+            var nameEl = $('[name="title"]');
+            var genreEl =$('[name="genre"]');
+            var yearEl = $('[name="year"]');
+            var actorEl = $('[name="actor"]');
+            console.log(nameEl, genreEl, yearEl, actorEl)
+
+            // set empty value to these elements
+            nameEl.val('');
+            genreEl.val('');
+            yearEl.val('');
+            actorEl.val('');
+
+        }
+
+        function AddForm() {
+            
+            ClearForm();
+            // let get the element 
+          
+        }
+
+        function SaveNewForm()
+        {
+            // let get the element 
+            var nameEl = $('[name="title"]');
+            var genreEl =$('[name="genre"]');
+            var yearEl = $('[name="year"]');
+            var actorEl = $('[name="actor"]');
+
+            var name = nameEl.val();
+            var genre = genreEl.val();
+            var year = yearEl.val();
+            var actor = actorEl.val();
+            console.log(name,genre, year, actor);
+
+            newMovie = {
+                name: name,
+                genre: genre,
+                year: year,
+                actor : actor
+                
+            }
+            Movies.push(newMovie);
+            // lets create our table row
+            var trEl = $('<tr></tr>');
+            for(elementIndeks in newMovie) {
+                var tdEl = $(`<td>${newMovie[elementIndeks]}</td>`);
+                tdEl.appendTo(trEl);
+            }
+
+            var tdActionEl = $('<td></td>');
+
+            var btnEditEl = $('<button>Edit</button>');
+            btnEditEl.on('click', (e)=>{
+                // get the element which trigger this click
+                var theElement = e.target;
+                var theElementEl = $(theElement)
+                console.log(theElement)
+                // move to its parent
+                console.log(theElementEl.parent())
+                console.log(theElementEl.parent().parent())
+                var selectedTr = theElementEl
+                    .parent() //  td
+                    .parent()  // tr 
+
+                var dataStr = selectedTr.attr('mydata');
+                console.log(dataStr);
+                var data = JSON.parse(dataStr)
+                var indeks = selectedTr.attr('mydata-index');
+                    
+                    var nameEl = $('[name="title"]');
+                    var genreEl =$('[name="genre"]');
+                    var yearEl = $('[name="year"]');
+                    var actorEl = $('[name="actor"]');
+
+                    nameEl.val(data.name)
+                    genreEl.val(data.genre)
+                    yearEl.val(data.year)
+                    actorEl.val(data.actor)
+
+                    btnUpdateEl = $('[name="submitUpdate"');
+                    btnUpdateEl.attr('selected-id', indeks)
+                
+            })
+
+            var btnDeleteEl = $('<button>Delete</button>');
+            btnDeleteEl.on('click', (mine)=>{
+                // get the element which trigger this click
+                var theElement = mine.target;
+                var theElementEl = $(theElement)
+                console.log(theElement);
+                var selectedRow = theElementEl.parent().parent();
+                console.log(selectedRow[0])
+
+                var indeks = selectedRow.attr('mydata-index');
+                alert(indeks)
+
+                selectedRow.remove();
+                //alert('Delete Bro');
+                newArray = [];
+                for (itemindex in Movies)
+                {
+                    if (itemindex !=  indeks)
+                    {
+                        newArray.push(Movies[itemindex]);
+                    }
+                }
+                Movies = newArray;
+            })
+
+            btnEditEl.appendTo(tdActionEl);
+            btnDeleteEl.appendTo(tdActionEl)
+
+            tdActionEl.appendTo(trEl);
+
+            var dataStr = JSON.stringify(newMovie);
+            trEl.attr('mydata', dataStr);
+            trEl.attr('mydata-index', Movies.length-1);
+
+            // table body 
+            tbodyEl = $('.mybody');
+            trEl.appendTo(tbodyEl);
+            ClearForm();
+        }
+
+
+        function Init() {
+            btnsubmitaddEl = $('[name="submitAdd"]')
+            btnsubmitaddEl.on('click', ()=>{
+                SaveNewForm();
+            })
+
+            btnsubmitupdateEl = $('[name="submitUpdate"');
+            btnsubmitupdateEl.on('click', (e)=>{
+                var theElement = e.target;
+                var theElementEl = $(theElement)
+                var indeks = theElementEl.attr('selected-id')
+                alert(indeks)
+                console.log(theElement);
+                var nameEl = $('[name="title"]');
+                var genreEl =$('[name="genre"]');
+                var yearEl = $('[name="year"]');
+                var actorEl = $('[name="actor"]');
+
+                var name = nameEl.val();
+                var genre = genreEl.val();
+                var year = yearEl.val();
+                var actor = actorEl.val();
+                console.log(name,genre, year, actor);
+
+                newMovie = {
+                    name: name,
+                    genre: genre,
+                    year: year,
+                    actor : actor
+                    
+                }
+
+                Movies[indeks] = newMovie
+
+                // searchrow = 
+                searchrow = $(`tr[mydata-index="${indeks}"]`) // mydata-index="1"
+
+                console.log('hallo ', searchrow)
+                var child = searchrow.children()
+                child1El  = $(child[0])
+                child2El  = $(child[1])
+                child3El  = $(child[2])
+                child4El  = $(child[3])
+                child1El.text(newMovie.name)
+                child2El.text(newMovie.genre)
+                child3El.text(newMovie.year)
+                child4El.text(newMovie.actor)
+                var dataStr = JSON.stringify(newMovie);
+                searchrow.attr('mydata', dataStr);
+            })
+        }
+
+        $(Init);
+
+    </script>
+</body>
+</html>
