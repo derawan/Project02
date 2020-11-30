@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>Javacsrpit</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="name" value="" autocomplete="off"/></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input type="text" name="address" value="" autocomplete="off"/></td>
+        </tr>
+        <tr>
+            <td><button id="add">Add Me</button></td>   
+        </tr>
+    </table>
+
+    <table id="list">
+
+    </table>
+    <script>
+        // [name="name"], [name="address"], #add,  #list
+
+        //jQuery() or  $()
+        $(
+            function() {
+
+                var btn = $('#add');
+                var name = $('[name="name"]');
+                var address = $('[name="address"]');
+                var list = $('#list');
+
+                /*   object.on(event, handler) */
+                btn.on(
+                    'click', 
+                    function()
+                    {
+                        dataName = name.val();
+                        dataAddress = address.val();
+                        dataPassword = password.val();
+                        ///alert(dataName + ' ' + dataAddress)
+
+                        dataRow = $('<tr></tr>');
+                        // <tr></tr>
+                        dataCell1 =  $('<td class="username"></td>');
+                        // <td class="username"></td>
+                        dataCell2 =  $('<td class="useraddress"></td>');
+                        // <td class="useraddress"></td>
+
+                        dataCell1.appendTo(dataRow);
+                        /*
+                            <tr>
+                                <td class="username"></td>
+                            </tr>
+                        */
+                        dataCell2.appendTo(dataRow);
+                        /*
+                            <tr>
+                                <td class="username"></td>
+                                <td class="useraddress"></td>
+                            </tr>
+                        */
+                        dataCell1.text(dataName);
+                        /*
+                            <tr>
+                                <td class="username">ika</td>
+                                <td class="useraddress"></td>
+                            </tr>
+                        */
+                        dataCell2.text(dataAddress);
+                        /*
+                            <tr>
+                                <td class="username">ika</td>
+                                <td class="useraddress">jakarta</td>
+                            </tr>
+                        */
+
+                        dataRow.appendTo(list);
+                        /*
+                            <table id="list">
+                            <tr>
+                                <td class="username">ika</td>
+                                <td class="useraddress">jakarta</td>
+                            </tr>
+                            
+                            </table>
+                        */
+
+                        name.val('please enter something');
+                        address.val('');
+                        name.focus();
+
+                    }
+                );
+
+
+
+            }
+        );
+
+
+
+    </script>
+</body>
+</html>

@@ -104,68 +104,102 @@
                 var list = $('#list');
 
                 /*   object.on(event, handler) */
-
-btnload.on(
-    'click',
-    () => {
-$
-    }
-)
-
-                btn.on(
+                btnLoad.on(
                     'click',
-                    function () {
-                        dataName = name.val();
-                        dataAddress = address.val();
-                        dataPassword = password.val();
-                        datamychoice = mychoice.val();
-                        datamyselector = myselector.val();
-                        dataopt = opt.val();
-                        datachk = chk.val();
-                        // alert(dataName + ' ' + dataAddress)
+                    () => {
 
-                        dataRow = $('<tr></tr>');
-                        dataCell1 = $('<td class="username"></td>');
-                        dataCell2 = $('<td class="useraddress"></td>');
-                        dataCell3 = $('<td class="userpassword"></td>');
-                        dataCell4 = $('<td class="usermychoice"></td>');
-                        dataCell5 = $('<td class="usermyselector"></td>');
-                        dataCell6 = $('<td class="useropt"></td>');
-                        dataCell7 = $('<td class="userchk"></td>');
+                        $.ajax(
+                            {
+                                url: './irfan.json',
+                                success: function (data, status) {
+                                    var myrecord = data.item;
+                                    for (a in myrecord) {
+                                        dataRow = $('<tr></tr>');
+                                        console.log('isi a = ' + a);
+                                        for (b in myrecord[a]) {
+                                            console.log('isi b = ' + b);
+                                            dataCell1 = $('<td></td>');
+                                            dataCell1.appendTo(dataRow);
+                                            dataCell1.text(myrecord[a][b]);
+                                            //myrecord[a].name
+                                        }
+                                        // dataCell1 =  $('<td class="username"></td>');
+                                        // dataCell2 =  $('<td class="useraddress"></td>');
+                                        // dataCell1.appendTo(dataRow);
+                                        // dataCell2.appendTo(dataRow);
+                                        // dataCell1.text(myrecord[a].name);
+                                        // dataCell2.text(myrecord[a].address);
+                                        dataRow.appendTo(list);
+                                    }
+                                },
+                                error: function (error) {
+                                    alert('error bro!!!')
+                                }
+                            }
 
-
-                        dataCell1.appendTo(dataRow);
-                        dataCell2.appendTo(dataRow);
-                        dataCell3.appendTo(dataRow);
-                        dataCell4.appendTo(dataRow);
-                        dataCell5.appendTo(dataRow);
-                        dataCell6.appendTo(dataRow);
-                        dataCell7.appendTo(dataRow);
-
-
-                        dataCell1.text(dataName);
-                        dataCell2.text(dataAddress);
-                        dataCell3.text(dataPassword);
-                        dataCell4.text(datamychoice);
-                        dataCell5.text(datamyselector);
-                        dataCell6.text(dataopt);
-                        dataCell7.text(datachk);
-
-                        dataRow.appendTo(list);
-
-                        name.val('type');
-                        address.val('');
-                        name.focus();
-
-
+                        );
 
                     }
-                );
+                )
+
+
+            }
+        );
+
+        btn.on(
+            'click',
+            function () {
+                dataName = name.val();
+                dataAddress = address.val();
+                dataPassword = password.val();
+                datamychoice = mychoice.val();
+                datamyselector = myselector.val();
+                dataopt = opt.val();
+                datachk = chk.val();
+                // alert(dataName + ' ' + dataAddress)
+
+                dataRow = $('<tr></tr>');
+                dataCell1 = $('<td class="username"></td>');
+                dataCell2 = $('<td class="useraddress"></td>');
+                dataCell3 = $('<td class="userpassword"></td>');
+                dataCell4 = $('<td class="usermychoice"></td>');
+                dataCell5 = $('<td class="usermyselector"></td>');
+                dataCell6 = $('<td class="useropt"></td>');
+                dataCell7 = $('<td class="userchk"></td>');
+
+
+                dataCell1.appendTo(dataRow);
+                dataCell2.appendTo(dataRow);
+                dataCell3.appendTo(dataRow);
+                dataCell4.appendTo(dataRow);
+                dataCell5.appendTo(dataRow);
+                dataCell6.appendTo(dataRow);
+                dataCell7.appendTo(dataRow);
+
+
+                dataCell1.text(dataName);
+                dataCell2.text(dataAddress);
+                dataCell3.text(dataPassword);
+                dataCell4.text(datamychoice);
+                dataCell5.text(datamyselector);
+                dataCell6.text(dataopt);
+                dataCell7.text(datachk);
+
+                dataRow.appendTo(list);
+
+                name.val('type');
+                address.val('');
+                name.focus();
 
 
 
             }
         );
+
+
+
+
+
 
 
 

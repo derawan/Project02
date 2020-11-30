@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <title>
+        </title>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    Name
+                </td>
+                <td><input type="text" name="name" value="" autocomplete="off"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>
+                    <input type="text" name="address" value="" autocomplete="off"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" name="password" value="" autocomplete="off"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Single Select</td>
+                <td>
+                    <select name="mychoice" autocomplete="off">
+                        <option value="1">Mr.</option>
+                        <option value="2">Mrs.</option>
+                        <option value="3">Miss</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Multi Select</td>
+                <td>
+                    <select name="myselector" autocomplete="off" multiple>
+                        <option value="lk">anak laki-laki</option>
+                        <option value="prm">anak perempuan</option>
+                        <option value="png">anak pungut</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Single Select with Radio</td>
+                <td>
+                    <input type="radio" name="opt" value="1"/>on
+                    <input type="radio" name="opt" value="2"/>off
+                    <input type="radio" name="opt" value="3"/>blur
+                </td>
+            </tr>
+            <tr>
+                <td>pilihan</td>
+                <td>
+                    <input type="checkbox" name="cek" value="1"/>haha
+                    <input type="checkbox" name="cek" value="2"/>hihi
+                    <input type="checkbox" name="cek" value="3"/>hehe
+                </td>
+            </tr>
+            <tr>
+                <td><button id="add">Add Me</button></td>
+            </tr>
+            <tr>
+                <td><button id="load">Load</button></td>
+            </tr>
+        </table>
+        <table id="list" border="1">
+
+        </table>
+        <script>
+            // [name='name'], [name="address"], #add, "list"
+            //jquery() or $()
+        $(
+            function(){
+                var btn = $('#add');
+                var btnLoad = $('#load');
+                var name = $('[name="name"]');
+                var address = $('[name="address"]');
+                var password = $('[name="password"]');
+                var pilihanku = $('[name="mychoice"]');
+                var banyak = $('[name="myselector"]');
+                
+                var list = $('#list');
+                
+                /* object.on(event, handler) */
+                btn.on('click', 
+                function()
+                    {
+                        var radioan = $('[name="opt"]:checked');
+                        dataName = name.val();
+                        dataAddress = address.val();
+                        dataPassword = password.val();
+                        dataPilihanku = pilihanku.val();
+                        dataBanyak = banyak.val();
+                        dataRadioan = radioan.val();
+                        //alert(dataName + ' ' + dataAddress)
+
+                        dataRow = $('<tr></tr>');
+                        dataCell1 = $('<td class="username"></td>');
+                        dataCell2 = $('<td class="useraddress"></td>');
+                        dataCell3 = $('<td class="userpassword"></td>');
+                        dataCell4 = $('<td class="usermychoice"></td>');
+                        dataCell5 = $('<td class="usermyselector"></td>');
+                        dataCell6 = $('<td class="useropt"></td>');
+                        
+                        dataCell1.appendTo(dataRow);
+                        dataCell2.appendTo(dataRow);
+                        dataCell3.appendTo(dataRow);
+                        dataCell4.appendTo(dataRow);
+                        dataCell5.appendTo(dataRow);
+                        dataCell6.appendTo(dataRow);
+                        dataCell1.text(dataName);
+                        dataCell2.text(dataAddress);
+                        dataCell3.text(dataPassword);
+                        dataCell4.text(dataPilihanku);
+                        dataCell5.text(dataBanyak);
+                        dataCell6.text(dataRadioan);
+
+                        dataRow.appendTo(list);
+
+                        name.val('');
+                        address.val('');
+                        password.val('');
+                        pilihanku.val('');
+                        banyak.val('');
+                        radioan.val('');
+                        name.focus();
+                    }
+                );
+                btnLoad.on(
+                    'click',
+                    () => {
+                        $.ajax(
+                            {
+                                url : './nabila.json',
+                                
+                            }
+                        );
+                    }
+                )
+            }
+        )
+        </script>
+    </body>
+</html>
