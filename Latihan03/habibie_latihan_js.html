@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <title></title>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+       <table>
+           <tr>
+               <td>Name</td>
+               <td>
+                   <input type="text" name="name" value=""  autocomplete="off"/>
+                </td>
+           </tr>
+           <tr>
+                <td>Address</td>
+                <td>
+                    <input type="text" name="address" value=""  autocomplete="off"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" name="password" value=""  autocomplete="off"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Select</td>
+                <td>
+                    <select name="mychoice" value=""  autocomplete="off">
+                        <option value="1">Mr.</option>
+                        <option value="2">Mrs.</option>
+                        <option value="3">Miss</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td> Multi Select</td>
+                <td>
+                    <select name="myselector" value=""  autocomplete="off" multiple>
+                        <option value="laki-laki">laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                        <option value="pungut">Pungut</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Single Select Radio</td>
+                <td>
+                    <input type="radio" name="myopt" id="opt" value="on">on
+                    <input type="radio"  name="myopt" id="opt" value="off">off
+                    <input type="radio" name="myopt" id="opt" value="blur">blur
+                </td>
+            </tr>
+            <tr>
+                <td>Check Box</td>
+                <td>
+                    <input type="checkbox" name="check" id="chk" value="on">check1
+                    <input type="checkbox" name="check" id="chk" value="off">check2
+                    <input type="checkbox" name="check" id="chk" value="blur">check3
+                </td>
+            </tr>
+            <tr>
+                <td><button id="add">Add Me</button></td>
+            </tr>
+       </table>
+
+       <table id="list">
+
+       </table>
+
+
+        <script>
+            // [name="name"], [name="address"], #add,  #list
+
+            //jQuery() or  $()
+            $(
+                function() {
+
+                    var btn = $('#add');
+                    var name = $('[name="name"]');
+                    var address = $('[name="address"]');
+                    var password = $('[name="password"]');
+                    var mychoice = $('[name="mychoice"]');
+                    var myselector = $('[name="myselector"]');
+                    var myopt = $('[name="myopt"]');
+                    var list = $('#list');
+
+                    /*   object.on(event, handler) */
+                    btn.on(
+                        'click', 
+                        function()
+                        {   
+                            var myopt = $('[name="myopt"]:checked');
+                            dataName = name.val();
+                            dataAddress = address.val();
+                            dataPassword = password.val();
+                            dataMychoice = mychoice.val();
+                            dataMyselector = myselector.val();
+                            dataMyopt = myopt.val();
+                            //alert(dataName + ' ' + dataAddress);
+                            
+                            dataRow = $('<tr></tr>');
+                        dataCell1 = $('<td class="username"></td>');
+                        dataCell2 = $('<td class="useraddress"></td>');
+                        dataCell3 = $('<td class="password"></td>');
+                        dataCell4 = $('<td class="mychoice"></td>');
+                        dataCell5 = $('<td class="myselector"></td>');
+                        dataCell6 = $('<td class="myopt"></td>');
+
+                        dataCell1.appendTo(dataRow);
+                        dataCell2.appendTo(dataRow);
+                        dataCell3.appendTo(dataRow);
+                        dataCell4.appendTo(dataRow);
+                        dataCell5.appendTo(dataRow);
+                        dataCell6.appendTo(dataRow);
+
+                        dataCell1.text(dataName);
+                        dataCell2.text(dataAddress);
+                        dataCell3.text(dataPassword);
+                        dataCell4.text(dataMychoice);
+                        dataCell5.text(dataMyselector);
+                        dataCell6.text(dataMyopt);
+
+
+
+                        dataRow.appendTo(list);
+
+                        name.val('please enter a value');
+                        address.val('');
+                        password.val('');
+                        
+                        focus.val('');
+                        }
+                        
+                    );
+
+
+
+                }
+            );
+
+
+
+        </script>
+    </body>
+</html>
