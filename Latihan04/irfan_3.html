@@ -13,7 +13,9 @@
             <li>Data 5</li>
             <li>Data 6</li>
         </ol>
+        <script src="./mylibrary.js"></script>
         <script>
+
             $(function(){
                 $('ol').append('<li>Tambah Pake Append</li>')
                 $('<li>Tambah Pake Append TO</li>').appendTo($('ol'));
@@ -23,7 +25,8 @@
                 {
                     if (i==2)
                     {
-                        $('<li>Ini disisipkan setelah indeks 2</li>').insertAfter($(ol[i]))
+                       // $('<li>Ini disisipkan setelah indeks 2</li>').insertAfter($(ol[i]))
+                       MyFunctionAddAfter($(ol[i]),$('<li>Ini disisipkan setelah indeks 2</li>'))
                         $('<li>Ini disisipkan sebelum indeks 2</li>').insertBefore($(ol[i]))
 
                     }
@@ -31,10 +34,10 @@
 
 
                 $('ol').wrap('<p></p>')
-                // please becareful ya!!! check the indeks
-                alert('lets replace it')
+                // // please becareful ya!!! check the indeks
+                // alert('lets replace it')
 
-                //var ol = $('ol').children();
+                var ol = $('ol').children();
                 for(i=0;i<ol.length;i++)
                 {
                     if (i==2)
