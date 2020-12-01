@@ -1,0 +1,355 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+        <link href="my.css" rel="stylesheet" >
+    </head>
+
+    <body>
+        Hello
+        <script>
+            //  BASIC JAVASCRIPT PROGRAMMING - A REVIEW
+            /*
+                Statement in programming actually can be grouped into 3 type
+                1. variable / data operation 
+                    * assign a value into a variable   ex. x = 10
+                    * variable / data operation   ex.    x + y + 2 / 5
+                    * a combination of it   ex  a = x + y + 2 / 5
+                    * logical operation / branching operation   if(){}, switch(){} etc
+                2. function call
+                    * we call a function using  [function_name](param_value, param_value ....)
+                3. definition
+                   when we define a function or classes
+            */
+
+
+            // this is how we define a variable and assign a variable with value
+            /*
+                let [variable_name] = [variable_value]
+
+                or 
+                    [variable_name] = [variable_value]
+
+                
+                this is how we write string value
+                ex.   1.   "this is a text"
+                      2.   'this is a text'
+                sometimes we use escape characters so we can write character " or '  properly
+                ex.   1.   "the \"Guardian of the Galaxy\" are parts of 'Marvel Universe' "
+                      2.   'the \'Guardian of the Galaxy\' are parts of "Marvel Universe" '
+
+                when we want to use variable value in a string we can use concatenation operator or ` (beware ` is not the same with ')
+                ex.
+                       let number_of_player = 11
+                       let myteks1 = `soccer has ${number_of_player} players so we can play for each team `
+
+                       or using concatenation operator + 
+
+                       let myteks2 = 'soccer has ' + number_of_player + ' players so we can play for each team '
+                                     ----data----- + -----variable--- + --------------data----------------------
+
+            */
+            let myvar1 = 10;
+                myvar2 = 25;
+                myvar3 = 5 + 2;
+                myvar4 = myvar3 * myvar2;  
+                ///myvar5 = myvar345
+                myvar6 = "ika";
+                myvar7 = myvar6 + 'irfan'
+                myvar8 = "hello boy!!! is the \"teacher\" "
+                myvar9 = 'irfan is myname '
+                myvar10 = `irfan berumur ${myvar2} tahun`
+
+                
+                console.log('balsdfsdfs')
+
+
+                /**************************
+                 
+                    function is a sub program,sub model, 
+                    a subset of program to do specific task
+                    and in a lot of cases we define a function
+                    because we have to repeat these codes in our entire program
+                    
+                    function is defined in 3 ways
+                    1.  normal / named-function
+                        function [function_name]([param1, param2.....])
+                        {
+                            return [returnvalue]
+                        }
+                    2.  anonymous function / function with no name 
+                        we define a function as data type an assigned it into 
+                        a variable
+                        [myfunction_variable] = function ([param1, param2.....])
+                        {
+
+                        }
+                    3.  lambda expression / function 
+                        we define a function as data type an assigned it into 
+                        a variable  using mathematical formula expression  () => {}
+                        [myfunction_variable] = ([param1, param2.....]) =>
+                        {
+
+                        }
+
+                *********************************/
+                function fx(param1, param2, param3)
+                {
+                    let a = 3 * (param1*param1);
+                    let b = 2 * param2;
+                    let c = param3;
+                    return a + b +c ;
+                }
+
+                // we call this using 
+                    myreturnvalue1 = fx(3,2,4);
+                //
+
+                myfunction = function(param1, param2, param3) {
+                    let a = 3 * (param1*param1);
+                    let b = 2 * param2;
+                    let c = param3;
+                    return a + b +c ;
+                }
+                // we call this using its variablename(param,param)
+                myreturnvalue2 = myfunction(3,2,4);
+                //
+
+                /// lambda expression / function / closure
+                myfunction2 = (param1, param2 ) =>
+                {
+                    let a = 3 * (param1*param1);
+                    let b = 2 * param2;
+                    let c = param3;
+                    return a + b +c ;
+                }
+                // we call this using its variablename(param,param)
+                myreturnvalue2 = myfunction(3,2,4);
+                //
+
+
+                /*****
+                 * 
+                 * Array is a series of variable
+                 * each item variable is given an index
+                 * array has a number of items  - to get the number of items in array use array.length 
+                 * ex  let mm = ["data1","data2","data2"]
+                 *     mm[index]  ------- valid index value are between 0 - mm.length-1
+                 *     mm.length  ------- will be 3
+                 * 
+                 * normal array has index value number from 0 to infinity
+                 * normal array use  [ and ]   
+                 *****/
+                myarray = [1,2,3,4,5,6,7];
+                myarray = [1,2,3,"habibi","ninda",6,7];
+                myarray[0] = 1
+
+                // because array type of this index is number we can use for like down below
+                // 
+                for(indeks=-5;indeks<myarray.length;indeks = indeks +1)
+                {
+                    myarray[index]
+                }
+
+                for(i = 0 ; i<10;i++)
+                {
+                    for(j=i; j < 444; j++)
+                    {
+
+                    }
+                }
+
+                /*****
+                 * 
+                 * Array is a series of variable
+                 * each item variable is given an index
+                 * array has a number of items  - to get the number of items in array use array.length 
+                 * ex  let mm = { "id"=>"data1","name"=>"data2",address""=>"data2"]
+                 *     mm[index]  ------- valid index value are non number
+                 *     mm.length  ------- will be 3
+                 * 
+                 * associative array has index value non number - common we use string type
+                 * normal array use  { }
+                 * sometimes in real application we call this as struct or record
+                 * a record which it has internal variabel
+                 * in javascript we call also this as an object thats why they call it 
+                 * then javascript object defined =>  JSON (JavaScript Object Notation)
+                 *****/
+                 myarray2 =  {
+                    "nik": 301,
+                    "nama": "ika",
+                    "sex":"wanita"
+                }
+                // we can call its internaltvariable or its array items using its index
+                thename = myarray2["nama"];
+                // or we can use dot (.) notation   record.element
+                thename = myarray2.nama;
+
+                // for all kinds of array if we want to get / iterate for each its items we use this kind of for
+                for(indeks in myarray2)
+                {
+
+                }
+
+
+                /*******
+                 *  pay attention this with our tutor/example in associative array !!!!!
+                 *  Object Oriented Programming
+                 *  object can be defined int 3 ways
+                 *  1.  using object notation / JSON
+                            myobject = {
+                            "nama" : "bebek",   // we defined
+                            "alamat": "doyok",
+                            "makan" : function() {
+
+                            }
+                        }
+                 *  2.  using constructor function
+                        function Animal(nama) 
+                        {
+                            // this is how we define its elements
+                            this["name"] = nama  or this.name = nama
+
+                            this.makan = function() {
+
+                            }
+
+                            this.minum = function() {
+
+                            }
+                        }
+                 *  3.  using class definition
+                        class Animal
+                        {
+                            // this is how we define its elements
+                            name = ""
+
+                            // this is special function definition to initialize its object
+                            // same with above
+                            cunstructor(nama) {
+                                this.name = nama
+                            }
+
+                            makan() {
+
+                            }
+                            
+
+                            minum() {
+
+                            }
+                        }
+                 * 
+                 *
+                 *  INSTANCING object - creating data with the type of our object 
+                 *  creating instance object based on the three model of definitions
+                 *  1.  JSON notation, we already create the object an assigned it to variable
+                 *      in this example myobject
+                 *  2.  function constructor
+                 *      mynewobject = new Animal('dog')
+                 *  3.  class definition
+                 *      mynewobject = new Animal('dog')
+                 */
+
+                
+
+               // object - static 
+               myobject = {
+                   "nama" : "bebek",
+                   "alamat": "doyok",
+                   "makan" : function() {
+
+                   }
+               }
+
+               // manggil object
+               myobject["nama"] = "bebek";
+               myobject["makan"]()
+
+               myobject.nama = "bebek";
+               myobject.makan();
+               console.log('balsdfsdfs')  // this is an object console which has method log()
+               /*** other default object on browser ***/
+               /*
+                  console :: for handling debug console in any browser
+                  window  :: for handling window elements of any browser, 
+                  Navigator :: for handling navigation elements of any browser, 
+                  String :: some text utilities. 
+                  Math :: mathematics utilities
+               */
+
+
+
+               //function fx(param1, param2, param3)
+               fx('bunga');
+
+               
+               myfunction(90)
+                //myarray2["nik"]
+
+                
+                function Animal(nama) {
+                    this["name"] = nama 
+                    this.makan = function() {
+
+                    }
+                    this.minum = function() {
+
+                    }
+                }
+
+
+                function Ikan(nama)
+                {
+                    this.hidup = "air";
+                    var x = new Animal(nama);
+                    for(a in x ){
+                        this[a]= x[a]
+                    }
+                }
+
+                animal1 = new Animal('bebek');
+                animal2 = new Animal('kucing oren');
+                
+
+                class  MahlukHidup {
+                    name = "irfan"
+
+                    makan() {
+                        alert('aku makan');
+                    }
+
+                }
+
+                class Binatang  extends MahlukHidup
+                {
+                    jenis_makanan = ""
+                }
+
+                
+                // jQuery = $
+                //$(parameter berupa alamat) -> array of sesuai 
+                // $('td')
+
+                //$(string_element_html)
+                //$('<table></table>');
+
+
+                // execute function 
+
+
+                // EVENT - click, dblclick, keypress, keyup, keydown
+
+
+        </script>
+        <span id="catatan">bababa ddddd</span>
+        <input type="text" id="data" value="dada">
+        <button id="tombol">Click Saya</button>
+
+        <input type="text" id="data2" value="dada">
+
+        <script src="my.js">
+            
+            
+        </script>
+    </body>
+</html>

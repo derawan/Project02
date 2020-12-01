@@ -1,0 +1,16 @@
+{
+    "item" : [
+        {
+            "name":"angel",
+            "address":"bekasi"
+        },
+        {
+            "name":"ika",
+            "address":"jakarta"
+        },
+        {
+            "name":"irfan",
+            "address":"depok"
+        }
+    ]
+}

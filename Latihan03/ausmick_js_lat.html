@@ -1,0 +1,174 @@
+<html>
+    <head>
+        <title>
+        </title>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    Name
+                </td>
+                <td><input type="text" name="name" value="" autocomplete="off"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>
+                    <input type="text" name="address" value="" autocomplete="off"/>
+                </td>
+            <tr>
+            <td>Password</td>
+            <td>
+            <input type="password" name="password" value="" autocomplete="off"/>
+            </td>
+            </tr>
+            <tr>
+                <td>Single Select</td>
+                <td>
+                <select name="mychoice1" autocomplete="off">
+                <option value=1>Mr.</option>
+                <option value=2>Mrs.</option>
+                <option value=3>Miss.</option>
+                </select>
+                </td>
+                </tr>
+                <tr>
+                    <td>Multi Select</td>
+                    <td>
+                    <select name="myselector" autocomplete="off" multiple> 
+                    <option value="laki">Anak Laki-laki.</option>
+                    <option value="permpuan">Anak Perempuan.</option>
+                    <option value="pungut">Anak Pungut.</option>
+                    </select>
+                    </td>
+                    </tr>
+                </tr>
+                <tr>
+                    <td>Single Select with Radio</td>
+                    <td>
+                    <input type="radio" name="opt" value="1"/> On
+                    <input type="radio" name="opt" value="2"/> Off
+                    <input type="radio" name="opt" value="3"/> Blur
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>SCCC</td>
+                        <td>
+                        <input type="checkbox" name="chk" value="1"/> Admin
+                        <input type="checkbox" name="chk" value="2"/> Manager
+                        <input type="checkbox" name="chk" value="3"/> Sales
+                        </td>
+                        </tr>
+            <tr>
+                <td><button id="add">Add Me</button></td>
+            </tr>
+            <tr>
+                <td><button id="load">Load</button></td>
+            </tr>
+        </table>
+        <table id="list" border="1">
+
+        </table>
+        <script>
+                $(
+                    function() {
+                            var btn = $('#add');
+                            var btnLoad = $('#load')
+                            var name = $('[name="name"]');
+                            var address = $('[name="address"]');
+                            var password = $('[name="password"]');
+                            var mychoice1 = $('[name="mychoice1"]');
+                            var myselector = $('[name="myselector"]');
+                            
+
+                            var list = $('#list');
+                            
+
+                            btn.on(
+                                'click', 
+                                 function()
+                            {
+                                var myopt = $('[name="opt"]:checked');
+                                dataName = name.val();
+                                dataAddress = address.val();
+                                dataPassword = password.val();
+                                dataMychoice1 = mychoice1.val();
+                                dataMyselector = myselector.val();
+                                dataMyopt = myopt.val();
+                                // alert(dataName + ' ' + dataAddress)
+
+                            
+                                // }
+                                // )
+
+                                
+
+
+                                dataRow = $('<tr></tr>');
+                                dataCell1 = $('<td class="username"></td>');
+                                dataCell2 = $('<td class="useraddress"></td>');
+                                dataCell3 = $('<td class="userpassword"></td>');
+                                dataCell4 = $('<td class="usermychoice"></td>');
+                                dataCell5 = $('<td class="usermyselector"></td>');
+                                dataCell6 = $('<td class="useropt"></td>');
+                                
+                                dataCell1.appendTo(dataRow);
+                                dataCell2.appendTo(dataRow);
+                                dataCell3.appendTo(dataRow);
+                                dataCell4.appendTo(dataRow);
+                                dataCell5.appendTo(dataRow);
+                                dataCell6.appendTo(dataRow);
+                                
+                                dataCell1.text(dataName);
+                                dataCell2.text(dataAddress);
+                                dataCell3.text(dataPassword);
+                                dataCell4.text(dataMychoice1);
+                                dataCell5.text(dataMyselector);
+                                dataCell6.text(dataMyopt);
+
+                                dataRow.appendTo(list);
+
+                                name.val(' add something ');
+                                address.val(' ');
+                                name.focus();
+                            }
+                            );
+
+                            btnLoad.on(
+                                'click',
+                                () => {
+                                    // alert(123)
+                                    $.ajax(
+                                            {
+                                                url : './ausmick.json',
+                                                success : function(data, status)
+                                                {
+                                                    var myrecord = data.item;
+                                                    for (a in myrecord) {
+                                                        dataRow = $('<tr></tr>');
+                                                        dataCell1 = $('<td class="username"></td>');
+                                                        dataCell2 = $('<td class="useraddress"></td>');
+                                                        dataCell1.appendTo(dataRow);
+                                                        dataCell2.appendTo(dataRow);
+                                                        dataCell1.text(myrecord[a].name);
+                                                        dataCell2.text(myrecord[a].address);
+
+                                                    }
+                                                    // console.log(data);
+                                                    // alert('sukses bro!!!')
+                                                },
+                                                failed: function(error)
+                                                {
+                                                    alert('error bro!!!')
+                                                }
+                                            }
+                                    );
+                                        })
+                    }
+                );
+        </script>
+    </body>
+</html>
+

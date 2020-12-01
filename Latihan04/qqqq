@@ -1,0 +1,37 @@
+<?php
+
+
+    $myvariable = "hello world";
+
+
+    if ($x > 10)
+    {
+
+    }
+
+    for($i=0;$i<10;$i++)
+    {
+
+    }
+
+
+===============
+var 
+    id : int
+    name : string;
+
+begin
+    name := "hello world";
+
+    for (id, 0, 10)
+    begin
+            .....
+            
+    end;
+
+end;
+
+
+
+
+
