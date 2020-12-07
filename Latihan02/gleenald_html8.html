@@ -1,0 +1,160 @@
+<html>
+    <head>
+        <title>
+            asdf
+        </title>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    </head>
+
+    <body>
+        <table>
+            <tr>
+                <td>
+                    Name
+                </td>
+                <td><input type="text" name="name" value="" autocomplete="off"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Adress</td>
+                <td>
+                    <input type="text" name="address" value="" autocomplete="off"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" name="password" value="" autocomplete="off"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Single Select</td>
+                <td>
+                    <select name="mychoice1" autocomplete="off">
+                        <option value=1>mr.</option>
+                        <option value=2>mrs.</option>
+                        <option value=3>miss</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>multi select</td>
+                <td>
+                    <select name="mySelector" autocomplete="off" multiple>
+                        <option value=laki>anak laki laki</option>
+                        <option value=perempuan>anak perempuan</option>
+                        <option value=pungut>anak pungut</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Single Select with radio</td>
+                <td>
+                    <input type="radio" name="opt" value="1"/> On
+                    <input type="radio" name="opt" value="2"/> Off
+                    <input type="radio" name="opt" value="3"/> Blur
+                </td>
+            </tr>
+            <tr>
+                <td>Single Select with radio</td>
+                <td>
+                    <input type="checkbox" name="opt" value="1"/> On
+                    <input type="checkbox" name="opt" value="2"/> Off
+                    <input type="checkbox" name="opt" value="3"/> Blur
+                </td>
+            </tr>
+            <tr>
+                <td><button id="add">Add Me</button></td>
+            </tr><tr>
+                <td><button id="load">load</button></td>
+            </tr>
+        </table>
+        <table id="list">
+
+        </table>
+        <script>
+                $(
+                    function() {
+                            var btn = $('#add');
+                            var btnLoad = $('#load')
+                            var name = $('[name="name"]');
+                            var address = $('[name="address"]');
+                            var password = $('[name="password"]');
+                            var mychoice1 = $('[name="mychoice1"]');
+                            var mySelector = $('[name="mySelector"]');
+                            var myOpt = $('[name="opt"]');
+                            var list = $('#list');
+
+                            btnLoad.on(
+                                'click',
+                                () => {
+                                    
+                                    $.ajax(
+                                        {
+                                            url : './gleenaldz.json',
+                                            success : function(data, status)
+                                            {
+                                                alert('success')
+                                            }
+                                            error: function(error)
+                                            {
+                                                alert('error')
+                                            }
+                                        }
+
+                                    );
+                                }
+                            )
+
+                            btn.on(
+                                'click', 
+                                function()
+                                {   
+                                dataName = name.val();
+                                dataAddress = address.val();
+                                dataPassword = password.val();
+                                dataMychoice1 = mychoice1.val();
+                                dataMySelector = mySelector.val();
+                                dataMyOpt = MyOpt.val();
+                                //alert(dataName +''+ dataAddress)
+
+                                dataRow = $('<tr></tr>');
+                                dataCell1 = $('<td class="username"></td>');
+                                dataCell2 = $('<td class="useraddress"></td>');
+                                dataCell3 = $('<td class="userpassword"></td>');
+                                dataCell4 = $('<td class="usermychoice1"></td>');
+                                dataCell5 = $('<td class="usermySelector"></td>');
+                                dataCell6 = $('<td class="usermyOpt"></td>');
+
+                                dataCell1.appendTo(dataRow);
+                                dataCell2.appendTo(dataRow);
+                                dataCell3.appendTo(dataRow);
+                                dataCell4.appendTo(dataRow);
+                                dataCell5.appendTo(dataRow);
+                                dataCell6.appendTo(dataRow);
+
+                                dataCell1.text(dataName);
+                                dataCell2.text(dataAddress);
+                                dataCell3.text(dataPassword);
+                                dataCell4.text(dataMychoice1);
+                                dataCell5.text(dataMySelector);
+                                dataCell6.text(dataMyOpt);
+
+
+
+                                dataRow.appendTo(list);
+
+                                name.val('');
+                                address.val('');
+                                password.val('');
+                                name.focus();
+
+
+                                }
+                            );
+
+                    }
+                );
+        </script>
+    </body>
+</html>

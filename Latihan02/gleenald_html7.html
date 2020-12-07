@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>task04_24-11-2020_gleenald</title>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+        <script>
+            //define new function namanya buatTabel//
+            function buatTabel(rowcount,colcount){
+                var myElement =[];
+                myElement.push('<table border="1" style="background:red">');
+                var i = 0;
+                for (row = 0; row < rowcount; row++)
+                {
+                    myElement.push('<tr>')
+                    for(col = 0; col < colcount; col++)
+                    {
+                        i++
+                        myElement.push('<td>')
+                        myElement.push('data' + i)
+                        myElement.push('</td>')
+                    }
+                    myElement.push('</tr>')
+                }
+                myElement.push('</table>');
+
+                var str=myElement.join('')
+                $('#body').html(str);
+            }
+
+            //define new function namanya buatList//
+            function buatList(list){
+                var myElement2 =[];
+                myElement2.push('<ol>');
+                var num = 0;
+                for(a = 0; a < list; a++)
+                {
+                    num ++
+                    myElement2.push('<li>')
+                    myElement2.push('list' + num)
+                    myElement2.push('</li>')
+                }
+                myElement2.push('</ol>');
+
+                var str=myElement2.join('')
+                $('body').html(str);
+            }
+            
+            //define new function for customer table//
+            function crewTable()
+            {
+                crew = [
+                    {'id':1, name:'john'}
+                    {'id':2, name:'dean'}
+                ];
+                var myElement3 = [];
+                myElement3.push('<table border="1">')
+                rowcount = crew.length;
+                for(x = 0; x < rowcount; x++)
+                {
+                    myElement3.push('<tr>')
+                    for(y=0; )
+                }
+
+
+                
+
+            }
+            
+            
+
+
+        </script>
+       
+    </head>
+
+    <body id="body">
+        <table>
+            <tr>
+                <td>id</td>
+                <td>name</td>
+            </tr>
+
+            <tr>
+                <td>data3</td>
+                <td>data4</td>
+            </tr>
+
+        </table>
+
+    </body>
+</html>
